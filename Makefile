@@ -3,7 +3,7 @@ deps:; npm i -g grunt; npm install
 
 #######################################
 
-org_admin_name=admin@yenepoya
+org_admin_name=admin@ces
 
 create_genders:
 	psql -d openchs < create_gender.sql

@@ -3,10 +3,10 @@ const IDI = require("openchs-idi");
 
 module.exports = IDI.configure(
   {
-    name: "Yenepoya",
+    name: "CES",
     "chs-admin": "admin",
-    "org-name": "Yenepoya",
-    "org-admin": "admin@yenepoya",
+    "org-name": "CES",
+    "org-admin": "admin@ces",
     secrets: "../secrets.json",
     files: {
       adminUsers: {
