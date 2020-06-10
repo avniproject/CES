@@ -1,0 +1,83 @@
+{
+  "name" : "Registration Form",
+  "uuid" : "9d12e813-9c87-4374-937b-a4076525e128",
+  "formType" : "IndividualProfile",
+  "formElementGroups" : [ {
+    "uuid" : "60482509-b8d7-4458-ac7f-8d16ac4a3d76",
+    "name" : "Details",
+    "displayOrder" : 1.0,
+    "display" : "Details",
+    "formElements" : [ {
+      "name" : "Associated Patient's name",
+      "uuid" : "2d8ce739-a414-4f97-b306-3d322c8ea2d8",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Associated Patient's name",
+        "uuid" : "9c8e0a00-902f-4871-ae34-bed6ff40e659"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
+      "name" : "Relative's Name",
+      "uuid" : "c770d70f-f350-450a-879a-d233bd9d1b62",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Relative Name",
+        "uuid" : "8f938a80-71d8-4710-8471-b3445eed63df"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
+      "name" : "Related to As",
+      "uuid" : "f7606298-75f1-40c9-955c-c898dddd104a",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Related to As",
+        "uuid" : "48e30850-067f-41af-a6ae-15a9850f4bfb"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const individual = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({individual, formElement});\n  statusBuilder.show().valueInRegistration('Relative Name').is.defined;\n  return statusBuilder.build();\n};",
+      "mandatory" : false
+    }, {
+      "name" : "Origin State",
+      "uuid" : "7a6309d4-53ad-4330-b7e3-3408fdd9aac3",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Origin State",
+        "uuid" : "e8ced17b-1bf9-418b-be6a-5b5afa24f3c3"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "District",
+      "uuid" : "16a70dd4-a650-4dba-89a3-2acc3f85bdfa",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "District",
+        "uuid" : "f9431241-9210-426c-a3ed-b05b1c6ef90b"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Upload Photograph",
+      "uuid" : "661fec48-b508-4972-9fce-85b162da81b3",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Rehistrationf form,Photograph",
+        "uuid" : "e4e87ce6-b37c-4042-9684-fba23f4fc502"
+      },
+      "displayOrder" : 6.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

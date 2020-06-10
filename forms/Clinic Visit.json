@@ -1,0 +1,74 @@
+{
+  "name" : "Clinic Visit",
+  "uuid" : "ee531e43-4bbb-4602-a7a3-3ffa8af2d7f5",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "31f0ed4a-a049-4557-ad41-54a631521ba3",
+    "name" : "IP/CP Treatment Follow-up",
+    "displayOrder" : 1.0,
+    "display" : "IP/CP Treatment Follow-up",
+    "formElements" : [ {
+      "name" : "Clinic visit for",
+      "uuid" : "9518737c-2bb0-43b6-b741-66d69f58664d",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Clinic Visit for",
+        "uuid" : "b20963ec-dc48-417c-949c-8686d7def75e"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Next step of treatment",
+      "uuid" : "3776b8a5-9214-4d65-9f12-61b6ff8d8f62",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Next step",
+        "uuid" : "3288e227-fe44-4c4e-8478-f5c06daf4f29"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Next Visit/Sample Collection Date",
+      "uuid" : "b1062205-3e99-4a52-9dfd-82afd73c8049",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Next Visit/Sample Collection Date",
+        "uuid" : "5021a432-4d48-4462-ace6-4c6dbaf09003"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Next step').containsAnswerConceptName('Further Testing for Drug Resistance');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "IP Extended till",
+      "uuid" : "04614741-1f9a-41c7-8f00-36d5500efa16",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "IP Extended till date",
+        "uuid" : "39857668-f9d5-49bd-adfb-797da6bad8f0"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Next step').containsAnswerConceptName('IP Extension');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "CP Extended till",
+      "uuid" : "a4dd95ad-7559-4b03-bfb3-de55c9eaac15",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "CP Extended till date",
+        "uuid" : "7e6c6e9d-1816-4917-a00e-f4e7f6eb882f"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Next step').containsAnswerConceptName('CP Extension');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n     const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n    //Next step  \n    \n     complicationsBuilder.addComplication(\"Ongoing Treatment - IP Extended\")\n      .when.valueInEncounter(\"Next step\").containsAnswerConceptName('IP Extension');\n      \n      \n     complicationsBuilder.addComplication(\"Ongoing Treatment - CP Extended\")\n      .when.valueInEncounter(\"Next step\").containsAnswerConceptName('CP Extension');\n        \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    return decisions;\n};",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n \n  const ipExtensionDate = programEncounter.getObservationReadableValue('IP Extended till date');\n  const cpExtensionDate = programEncounter.getObservationReadableValue('CP Extended till date');\n  const nextStep = programEncounter.getObservationReadableValue('Next step');\n  const nextClinicVisitDate = programEncounter.getObservationReadableValue('Next Visit/Sample Collection Date');\n  \n  let cpPeriodicCheckinDate = imports.moment(programEncounter.encounterDateTime).add(1, 'months').toDate(); \n  let ipPeriodicCheckinDate = imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(); \n  \n  if(ipExtensionDate){\n  console.log('ipPeriodicCheckinDate',ipPeriodicCheckinDate);\n  console.log('ipExtensionDate',ipExtensionDate);\n  console.log('ip periodic is before ipExtensionDate',imports.moment(ipPeriodicCheckinDate).isBefore(ipExtensionDate, 'date'));\n  \n   if(imports.moment(ipPeriodicCheckinDate).isBefore(ipExtensionDate, 'date'))\n      scheduleBuilder\n    .add({\n      name: \"IP weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: ipPeriodicCheckinDate,\n      maxDate: imports.moment(ipPeriodicCheckinDate).add(11, 'days').toDate()\n    });\n    else\n  scheduleBuilder\n    .add({\n      name: \"IP Extension Sample collection\",\n      encounterType: \"Sample collection\",\n      earliestDate: ipExtensionDate,\n      maxDate: imports.moment(ipExtensionDate).add(4, 'days').toDate()\n    });    \n  }\n    \n  if(cpExtensionDate){\n    if(imports.moment(cpPeriodicCheckinDate).isBefore(cpExtensionDate, 'date'))\n       scheduleBuilder\n    .add({\n      name: \"CP monthly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: cpPeriodicCheckinDate,\n      maxDate: imports.moment(cpPeriodicCheckinDate).add(4, 'days').toDate()\n    }); else\n  scheduleBuilder\n    .add({\n      name: \"CP Extension Sample collection\",\n      encounterType: \"Sample collection\",\n      earliestDate: cpExtensionDate,\n      maxDate: imports.moment(cpExtensionDate).add(4, 'days').toDate()\n    });\n    \n    }\n    \n    //Further Testing for Drug Resistance\n    if(nextStep && nextClinicVisitDate)\n    scheduleBuilder\n    .add({\n      name: \"Clinic Visit - Drug Resistance\",\n      encounterType: \"Clinic Visit\",\n      earliestDate: nextClinicVisitDate,\n      maxDate: imports.moment(nextClinicVisitDate).add(4, 'days').toDate()\n    }).whenItem(nextStep == 'Further Testing for Drug Resistance')\n    .is.truthy;\n    \n    if(nextStep == 'End IP/Start CP'){\n     if(!programEncounter.programEnrolment.hasEncounter('Treatment Phase Start', \"CP Treatment Phase Start\"))  \n    scheduleBuilder\n    .add({\n      name: \"CP Treatment Phase Start\",\n      encounterType: \"Treatment Phase Start\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });\n    }\n  \n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

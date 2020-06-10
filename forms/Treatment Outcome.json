@@ -1,0 +1,27 @@
+{
+  "name" : "Treatment Outcome",
+  "uuid" : "a910f068-484a-4ab9-827c-542f215e2170",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "b8cb5cb8-21a5-4e7b-832d-ec7d08fbb76c",
+    "name" : "TB Treatment Outcome",
+    "displayOrder" : 1.0,
+    "display" : "TB Treatment Outcome",
+    "formElements" : [ {
+      "name" : "Treatment Outcome",
+      "uuid" : "ba056d4c-6521-45af-87b6-891a57ebb4d3",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Treatment Outcome",
+        "uuid" : "1b6c1f8c-d3f7-4743-a701-35b5ddb045d9"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n   const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n     complicationsBuilder.addComplication(\"Treatment completed\");\n         \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    \n    return decisions;\n};",
+  "visitScheduleRule" : "",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

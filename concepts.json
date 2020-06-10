@@ -1,0 +1,1491 @@
+[ {
+  "name" : "+1",
+  "uuid" : "84b51f3f-cd49-4c8a-93f0-959e3ad76121",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "+2",
+  "uuid" : "2353be88-5dc8-462b-a84c-1d54e48b3205",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "+3",
+  "uuid" : "8b330847-8f8c-4f9a-b99d-ddde5b303980",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Abnormal",
+  "uuid" : "7ff157a2-2010-4675-b8c8-70dc978e0ed6",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Absent",
+  "uuid" : "3994268a-df35-4051-8b56-1ad328e54d58",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Associated Patient's name",
+  "uuid" : "9c8e0a00-902f-4871-ae34-bed6ff40e659",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "At Shelter",
+  "uuid" : "03931c8a-e484-42de-8a69-ad20962cdabb",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "At Street",
+  "uuid" : "6c10ac79-228c-43e8-b3ae-b46db7d93bdc",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "BMI",
+  "uuid" : "a5436b5c-ed86-4e16-97be-ffcd99b4f179",
+  "dataType" : "Numeric",
+  "lowNormal" : 18.5,
+  "highNormal" : 24.9,
+  "unit" : "kg/m²",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Breathing Difficuty",
+  "uuid" : "9aa037e0-9ea0-4dde-9893-6704acbd8066",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Increased",
+    "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+    "order" : 0.0
+  }, {
+    "name" : "Decreased",
+    "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+    "order" : 1.0
+  }, {
+    "name" : "Persistent",
+    "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+    "order" : 2.0
+  }, {
+    "name" : "Completely Relieved",
+    "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+    "order" : 3.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "CAT 1",
+  "uuid" : "13f71c9a-467e-4011-b44f-1b9bc6637874",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "CAT 2",
+  "uuid" : "110f7a77-038e-4c92-8e2b-b08f91c0b4b7",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Cause of Death",
+  "uuid" : "a01bd572-5f56-41a7-bbd8-e806a0f791c4",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "CBNAAT",
+  "uuid" : "8b3a34d1-b324-4f0c-8b6b-21712933d575",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Chest X-ray",
+  "uuid" : "c71fe55f-1b3b-4d13-ba16-15b0d9c5561e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Clinic Visit for",
+  "uuid" : "b20963ec-dc48-417c-949c-8686d7def75e",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "IP Follow-up",
+    "uuid" : "4f4a375a-813c-4837-beba-2a02c00e8b25",
+    "order" : 0.0
+  }, {
+    "name" : "CP Follow-up",
+    "uuid" : "9264b757-d054-4dc3-9b22-4a88bb01b097",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Collect Sample for Smear Microscopy",
+  "uuid" : "34c84a38-f400-4982-95d6-da096267a83f",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Counselling point",
+    "uuid" : "2409577d-6bd6-4f70-a63c-9c1efa6162b9",
+    "order" : 0.0
+  } ]
+}, {
+  "name" : "Collect Sample for to check Treatment Success",
+  "uuid" : "e0dcfd16-b6ef-46ce-9a81-918005c86635",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Counselling point",
+    "uuid" : "2409577d-6bd6-4f70-a63c-9c1efa6162b9",
+    "order" : 0.0
+  } ]
+}, {
+  "name" : "Collect samples for TB diagnosis",
+  "uuid" : "8f4c04d3-d411-478d-a74d-704f2c7be62c",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Counselling point",
+    "uuid" : "2409577d-6bd6-4f70-a63c-9c1efa6162b9",
+    "order" : 0.0
+  } ]
+}, {
+  "name" : "Collect samples to check for CBNAAT, LPA , Random Blood Sugar and HIV",
+  "uuid" : "5edc435a-23d4-4f89-8ce4-8a3ec24c7aa9",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Counselling point",
+    "uuid" : "2409577d-6bd6-4f70-a63c-9c1efa6162b9",
+    "order" : 0.0
+  } ]
+}, {
+  "name" : "Completed",
+  "uuid" : "500c39ce-7361-451f-9580-81b3c1565573",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Completed with Extension",
+  "uuid" : "2c401288-f77c-4153-808c-22a88e98e7ad",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Completely Relieved",
+  "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Completion of Program",
+  "uuid" : "162d4994-7baf-4310-a015-0bee5c255a7e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Continue Phase",
+  "uuid" : "ff1b6fe5-b30e-4428-ad01-308b8c4f33b0",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Cough",
+  "uuid" : "853b60f5-336c-40ff-9cfe-29e20c81f79e",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Increased",
+    "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+    "order" : 0.0
+  }, {
+    "name" : "Decreased",
+    "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+    "order" : 1.0
+  }, {
+    "name" : "Persistent",
+    "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+    "order" : 2.0
+  }, {
+    "name" : "Completely Relieved",
+    "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+    "order" : 3.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "Cough,How many weeks",
+  "uuid" : "7b8151d6-ec70-44e3-afd6-48f47bfa543c",
+  "dataType" : "Numeric",
+  "active" : true
+}, {
+  "name" : "Counselling point",
+  "uuid" : "2409577d-6bd6-4f70-a63c-9c1efa6162b9",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "CP End Date",
+  "uuid" : "e226539d-5798-48e0-9e9f-2922bb0fb033",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "CP Extended till date",
+  "uuid" : "7e6c6e9d-1816-4917-a00e-f4e7f6eb882f",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "CP Extension",
+  "uuid" : "205e2d41-530a-4b73-9830-fe464a3e7be3",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "CP Follow-up",
+  "uuid" : "9264b757-d054-4dc3-9b22-4a88bb01b097",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "CP start date",
+  "uuid" : "576b24ff-bc48-4114-8c75-e3eb6dfaaeee",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "CP Status",
+  "uuid" : "6a75bccd-a711-49d3-9e19-248bb7f46875",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Completed",
+    "uuid" : "500c39ce-7361-451f-9580-81b3c1565573",
+    "order" : 0.0
+  }, {
+    "name" : "Completed with Extension",
+    "uuid" : "2c401288-f77c-4153-808c-22a88e98e7ad",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Cured",
+  "uuid" : "20952d47-0758-4222-8323-1fb4d3fb7acb",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Current status",
+  "uuid" : "755e9397-5416-466a-a132-5c0faa42abae",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Requires screening",
+    "uuid" : "6861207c-4007-41fc-bdcd-9e73515c1504",
+    "order" : 0.0
+  }, {
+    "name" : "Ongoing Treatment",
+    "uuid" : "dc9d8cd4-9f9a-400e-ae16-5e325aa787b6",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Current Treatment Phase",
+  "uuid" : "6aa426c4-5628-419c-9391-5c7330744ba2",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Intensive Phase",
+    "uuid" : "f9593866-bbd8-4926-98f1-5a4a9471821c",
+    "order" : 0.0
+  }, {
+    "name" : "Continue Phase",
+    "uuid" : "ff1b6fe5-b30e-4428-ad01-308b8c4f33b0",
+    "order" : 1.0
+  }, {
+    "name" : "Drug Resistant Regimen",
+    "uuid" : "2ab84fdb-ef29-4e38-8c7b-99544096902a",
+    "order" : 2.0
+  } ]
+}, {
+  "name" : "Date of Death",
+  "uuid" : "e96c2cd4-4074-459d-b838-0f77e59e5366",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Date of sample collected",
+  "uuid" : "f483a2e0-5629-4f20-ae43-6c29585a8a4c",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Daughter",
+  "uuid" : "d9fa1428-0919-4ca3-b589-192f67832a53",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Death",
+  "uuid" : "dd651aeb-1220-4dfe-830e-df8d3ee71d90",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Decreased",
+  "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Diabetic",
+  "uuid" : "6f482462-e34c-4c3d-aede-2d6a2b8b9ca8",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Diagnosed with Drug Resistant TB",
+  "uuid" : "dea28074-535f-472a-b5fb-d60de60ba35f",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Diagnosis Date for Drug Resistance",
+  "uuid" : "7413ffa1-cf95-40f5-a27c-11411eb873b5",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Died",
+  "uuid" : "606e1491-63d5-4dbd-924a-545a1f52e49a",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "District",
+  "uuid" : "f9431241-9210-426c-a3ed-b05b1c6ef90b",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Drug Resistant Regimen",
+  "uuid" : "2ab84fdb-ef29-4e38-8c7b-99544096902a",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Drug Resistant Regiment Start date",
+  "uuid" : "85f54ca0-3619-4b28-b44a-20eabaaecec4",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Drug Resistant Type",
+  "uuid" : "071165dc-7e2a-4c45-b784-fa47b1d92cd4",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Rifampicin Resistant",
+    "uuid" : "4463849d-51ef-47bc-835d-f8964ad0e307",
+    "order" : 0.0
+  }, {
+    "name" : "Multidrug Resistant",
+    "uuid" : "25763efb-88c0-44d0-8d08-b73a1f8eb902",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "End IP/Start CP",
+  "uuid" : "0ba65e13-cd23-4db9-818f-400b6b8745c2",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "End of Treatment Phase",
+  "uuid" : "474101e9-fa4f-4018-b207-0071d44d568a",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Intensive Phase",
+    "uuid" : "f9593866-bbd8-4926-98f1-5a4a9471821c",
+    "order" : 0.0
+  }, {
+    "name" : "Continue Phase",
+    "uuid" : "ff1b6fe5-b30e-4428-ad01-308b8c4f33b0",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Expired",
+  "uuid" : "4b19bd9b-9c68-4ee4-90d4-0908bfa9791b",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Father",
+  "uuid" : "60dbb998-a22e-465a-bbf5-c2e5e2764687",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Fatigue",
+  "uuid" : "398f91be-d035-46be-b31f-84091af6f58d",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Fever",
+  "uuid" : "e3294e6b-6203-4c51-aeed-cf376a9ac99c",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Increased",
+    "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+    "order" : 0.0
+  }, {
+    "name" : "Decreased",
+    "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+    "order" : 1.0
+  }, {
+    "name" : "Persistent",
+    "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+    "order" : 2.0
+  }, {
+    "name" : "Completely Relieved",
+    "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+    "order" : 3.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "Fever,how many weeks",
+  "uuid" : "4dd3080f-6213-43bc-a107-a77dce1b3209",
+  "dataType" : "Numeric",
+  "active" : true
+}, {
+  "name" : "For How many months did the treatment last",
+  "uuid" : "066494a6-f879-4136-b50f-f3acb0bad6e7",
+  "dataType" : "Numeric",
+  "active" : true
+}, {
+  "name" : "Friend",
+  "uuid" : "9a89ad76-2e23-4f40-8924-1f76bb9e382b",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Further Testing for Drug Resistance",
+  "uuid" : "cae829c6-0c24-48f5-9f88-52b20ba61e4e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Had TB earlier",
+  "uuid" : "206ae0bb-89d2-4283-afa7-7004db989855",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Health Worker Absent",
+  "uuid" : "108161cd-4711-4692-933a-a68c42cf208d",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Height",
+  "uuid" : "cf947fdf-1ead-4a8a-a89e-7a70ae7324ae",
+  "dataType" : "Numeric",
+  "lowAbsolute" : 20.0,
+  "highAbsolute" : 300.0,
+  "lowNormal" : 30.0,
+  "highNormal" : 200.0,
+  "unit" : "cm",
+  "active" : true
+}, {
+  "name" : "HIV",
+  "uuid" : "265e1a1d-65d1-48d7-918c-b30ce86ab630",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "HIV Result",
+  "uuid" : "fba62403-f070-4d82-81c4-e9e2909dbd90",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Reactive",
+    "uuid" : "30192898-1d30-4bdf-ad39-2a688777b503",
+    "order" : 0.0
+  }, {
+    "name" : "Non Reactive",
+    "uuid" : "b6c2a77f-d3a5-4d96-84d4-da0c323d742f",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "HIV Status",
+  "uuid" : "55f751ec-4a4c-4b62-930d-5c9267f88334",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Reactive",
+    "uuid" : "30192898-1d30-4bdf-ad39-2a688777b503",
+    "order" : 0.0
+  }, {
+    "name" : "Non Reactive",
+    "uuid" : "b6c2a77f-d3a5-4d96-84d4-da0c323d742f",
+    "order" : 1.0
+  }, {
+    "name" : "Unknown",
+    "uuid" : "53b571f8-5783-43c3-a508-bfe0796a9e37",
+    "order" : 2.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "Hospitalization",
+  "uuid" : "8b6202c4-b6b5-4ed2-8ffa-2509fec4ba68",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "How are night sweats",
+  "uuid" : "805e3fe3-807e-47dd-a1b8-e9005c664ce5",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Increased",
+    "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+    "order" : 0.0
+  }, {
+    "name" : "Decreased",
+    "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+    "order" : 1.0
+  }, {
+    "name" : "Persistent",
+    "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+    "order" : 2.0
+  }, {
+    "name" : "Completely Relieved",
+    "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+    "order" : 3.0
+  } ]
+}, {
+  "name" : "How is fatigue",
+  "uuid" : "6171b6ba-d269-4d78-8980-c28d9772d27f",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Increased",
+    "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+    "order" : 0.0
+  }, {
+    "name" : "Decreased",
+    "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+    "order" : 1.0
+  }, {
+    "name" : "Persistent",
+    "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+    "order" : 2.0
+  }, {
+    "name" : "Completely Relieved",
+    "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+    "order" : 3.0
+  } ]
+}, {
+  "name" : "In progress",
+  "uuid" : "0077b2b6-2b91-4c0a-9dda-269990d0edf6",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Increased",
+  "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Intensive Phase",
+  "uuid" : "f9593866-bbd8-4926-98f1-5a4a9471821c",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Investigative details/Prescriptions",
+  "uuid" : "dd4063c5-6e67-455f-a41d-23752f3299be",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "IP End Date",
+  "uuid" : "5c56f140-f0a6-4566-9d2e-eca620c06f15",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "IP Extended till date",
+  "uuid" : "39857668-f9d5-49bd-adfb-797da6bad8f0",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "IP Extension",
+  "uuid" : "1e4154a6-4482-4fed-b323-09ea64b9f2d2",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "IP Follow-up",
+  "uuid" : "4f4a375a-813c-4837-beba-2a02c00e8b25",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "IP start date",
+  "uuid" : "6ed1e9a4-7ae5-4da4-b421-aa671767dfed",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "IP Status",
+  "uuid" : "e6df909e-e95b-4622-887e-c242f8a77423",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Completed",
+    "uuid" : "500c39ce-7361-451f-9580-81b3c1565573",
+    "order" : 0.0
+  }, {
+    "name" : "Completed with Extension",
+    "uuid" : "2c401288-f77c-4153-808c-22a88e98e7ad",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Isoniazid Resistant",
+  "uuid" : "bc6d7440-3c9c-49eb-8ef0-3cc32382fa12",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Isoniazid sensitive",
+  "uuid" : "1d9e8b81-9720-4826-936e-73c770476ebb",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Leave against medical advice",
+  "uuid" : "a11e409a-2824-482b-af05-acedea25f247",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Loss of Apetite",
+  "uuid" : "fc8b5c79-11bd-4d83-82ff-3fc5bb596f69",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Increased",
+    "uuid" : "8b248b3d-750b-4cc9-a0e8-b9f29a32f40b",
+    "order" : 0.0
+  }, {
+    "name" : "Decreased",
+    "uuid" : "d42589b7-bef7-4238-ae00-1119b457dfa6",
+    "order" : 1.0
+  }, {
+    "name" : "Persistent",
+    "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+    "order" : 2.0
+  }, {
+    "name" : "Completely Relieved",
+    "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
+    "order" : 3.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "LPA",
+  "uuid" : "b7fe41c8-741e-478d-bb6d-4054ab37fa6e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "LPA Result",
+  "uuid" : "218e3b5a-c4c3-491a-bd44-40426c6d6098",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Multiple drug resistant",
+    "uuid" : "713481b0-9eae-41ad-9259-8346c9616c62",
+    "order" : 0.0
+  }, {
+    "name" : "Rifampicin and isoniazid sensitive",
+    "uuid" : "f8fe2878-5297-4d1e-a055-e4f8a35a1966",
+    "order" : 1.0
+  }, {
+    "name" : "Isoniazid sensitive",
+    "uuid" : "1d9e8b81-9720-4826-936e-73c770476ebb",
+    "order" : 2.0
+  }, {
+    "name" : "Isoniazid Resistant",
+    "uuid" : "bc6d7440-3c9c-49eb-8ef0-3cc32382fa12",
+    "order" : 3.0
+  } ]
+}, {
+  "name" : "Mother",
+  "uuid" : "9e1e215e-3282-4f4e-890c-613598a8f2f1",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Multidrug Resistant",
+  "uuid" : "25763efb-88c0-44d0-8d08-b73a1f8eb902",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Multiple drug resistant",
+  "uuid" : "713481b0-9eae-41ad-9259-8346c9616c62",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "NA",
+  "uuid" : "72ffab18-4f95-4b06-89ad-df3021b86dd8",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Negative",
+  "uuid" : "37068b03-201b-494b-8b13-6990dc14aadf",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Next step",
+  "uuid" : "3288e227-fe44-4c4e-8478-f5c06daf4f29",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Further Testing for Drug Resistance",
+    "uuid" : "cae829c6-0c24-48f5-9f88-52b20ba61e4e",
+    "order" : 0.0
+  }, {
+    "name" : "IP Extension",
+    "uuid" : "1e4154a6-4482-4fed-b323-09ea64b9f2d2",
+    "order" : 1.0
+  }, {
+    "name" : "CP Extension",
+    "uuid" : "205e2d41-530a-4b73-9830-fe464a3e7be3",
+    "order" : 2.0
+  }, {
+    "name" : "Diagnosed with Drug Resistant TB",
+    "uuid" : "dea28074-535f-472a-b5fb-d60de60ba35f",
+    "order" : 3.0
+  }, {
+    "name" : "End IP/Start CP",
+    "uuid" : "0ba65e13-cd23-4db9-818f-400b6b8745c2",
+    "order" : 4.0
+  } ]
+}, {
+  "name" : "Next Visit/Sample Collection Date",
+  "uuid" : "5021a432-4d48-4462-ace6-4c6dbaf09003",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Night Sweats",
+  "uuid" : "091f9916-49aa-43a0-a92f-522b876bbd62",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "No",
+  "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Non Reactive",
+  "uuid" : "b6c2a77f-d3a5-4d96-84d4-da0c323d742f",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Normal",
+  "uuid" : "4429d038-124c-4a8b-a6ec-5f7269dc47f6",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Number of days medicine taken in past week",
+  "uuid" : "1bbc613d-e195-4d5c-93d0-74482b915cef",
+  "dataType" : "Numeric",
+  "unit" : "days",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Ongoing Treatment",
+  "uuid" : "dc9d8cd4-9f9a-400e-ae16-5e325aa787b6",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Ongoing Treatment - CP",
+  "uuid" : "c059bbcc-cf19-4ffe-b1da-82edaf8f245f",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Ongoing Treatment - CP Extended",
+  "uuid" : "083fdbb5-946b-429e-a970-0765f7fba984",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Ongoing Treatment - Drug Resistant Regimen",
+  "uuid" : "8d9dfcbf-83ab-4f93-a73f-612ad5a7876a",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Ongoing Treatment - IP",
+  "uuid" : "f46566e7-9140-4b07-ab85-8367d3cfdda0",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Ongoing Treatment - IP Extended",
+  "uuid" : "263184d3-c7bb-4cd7-a57a-75a81c7f1864",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Origin State",
+  "uuid" : "e8ced17b-1bf9-418b-be6a-5b5afa24f3c3",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Other",
+  "uuid" : "a2639e26-ee7d-433d-9f23-91f736484983",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Other Complaints",
+  "uuid" : "6919cbdd-42b2-4e1d-aa15-f2cc9947d865",
+  "dataType" : "Text",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Other organization",
+  "uuid" : "45b31151-7f4c-4ed0-ad50-3c2dd6dde664",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Other reason for cancel",
+  "uuid" : "f8a9abe3-1a79-4e0e-a055-9df07c126972",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Other reason for exit",
+  "uuid" : "9e3412c4-3b00-4060-ae76-40e8b1af97f2",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Parmanent Migration",
+  "uuid" : "6c5e315a-856a-4ce6-b3db-f56810f1f35e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Patient is absent",
+  "uuid" : "bd665c5a-f510-455b-b214-0ad2dac02b9d",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Patient is migrated",
+  "uuid" : "def19c2d-85f2-4278-9020-b097c3988a37",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Patient Status",
+  "uuid" : "5b06e357-4423-431c-b747-5d4a20706ee7",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "At Shelter",
+    "uuid" : "03931c8a-e484-42de-8a69-ad20962cdabb",
+    "order" : 0.0
+  }, {
+    "name" : "At Street",
+    "uuid" : "6c10ac79-228c-43e8-b3ae-b46db7d93bdc",
+    "order" : 1.0
+  }, {
+    "name" : "Absent",
+    "uuid" : "3994268a-df35-4051-8b56-1ad328e54d58",
+    "order" : 2.0
+  }, {
+    "name" : "Transfered to home",
+    "uuid" : "76855c2a-a882-42eb-9adc-2cca5825fc34",
+    "order" : 3.0
+  }, {
+    "name" : "Leave against medical advice",
+    "uuid" : "a11e409a-2824-482b-af05-acedea25f247",
+    "order" : 4.0
+  }, {
+    "name" : "Died",
+    "uuid" : "606e1491-63d5-4dbd-924a-545a1f52e49a",
+    "order" : 5.0
+  } ]
+}, {
+  "name" : "Persistent",
+  "uuid" : "076da312-882c-4075-9804-924ac4ab4baf",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Place of Death",
+  "uuid" : "08fc23ac-1de5-424e-9175-a030cff2fb17",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Positive",
+  "uuid" : "aa035386-9c04-478a-ba65-23b1775a3e37",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Program Exit",
+  "uuid" : "d24f7325-a031-4d3f-843e-71e1a728e7ea",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Random Blood Sugar Result",
+  "uuid" : "df75c7b7-a410-4141-ae68-b532371526df",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Normal",
+    "uuid" : "4429d038-124c-4a8b-a6ec-5f7269dc47f6",
+    "order" : 0.0
+  }, {
+    "name" : "Diabetic",
+    "uuid" : "6f482462-e34c-4c3d-aede-2d6a2b8b9ca8",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "RBS",
+  "uuid" : "68250a6b-646d-4000-83d7-d29ea81a4c9c",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Reactive",
+  "uuid" : "30192898-1d30-4bdf-ad39-2a688777b503",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Reason of Cancel",
+  "uuid" : "c0bd3256-b865-499e-8fe3-f383b3730dd9",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Hospitalization",
+    "uuid" : "8b6202c4-b6b5-4ed2-8ffa-2509fec4ba68",
+    "order" : 0.0
+  }, {
+    "name" : "Health Worker Absent",
+    "uuid" : "108161cd-4711-4692-933a-a68c42cf208d",
+    "order" : 1.0
+  }, {
+    "name" : "Patient is absent",
+    "uuid" : "bd665c5a-f510-455b-b214-0ad2dac02b9d",
+    "order" : 2.0
+  }, {
+    "name" : "Patient is migrated",
+    "uuid" : "def19c2d-85f2-4278-9020-b097c3988a37",
+    "order" : 3.0
+  }, {
+    "name" : "Program Exit",
+    "uuid" : "d24f7325-a031-4d3f-843e-71e1a728e7ea",
+    "order" : 4.0
+  }, {
+    "name" : "Other",
+    "uuid" : "a2639e26-ee7d-433d-9f23-91f736484983",
+    "order" : 5.0
+  } ]
+}, {
+  "name" : "Reason of Exit",
+  "uuid" : "72a46df9-132c-4713-b5f6-dad0dc37c964",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Completion of Program",
+    "uuid" : "162d4994-7baf-4310-a015-0bee5c255a7e",
+    "order" : 0.0
+  }, {
+    "name" : "Parmanent Migration",
+    "uuid" : "6c5e315a-856a-4ce6-b3db-f56810f1f35e",
+    "order" : 1.0
+  }, {
+    "name" : "Death",
+    "uuid" : "dd651aeb-1220-4dfe-830e-df8d3ee71d90",
+    "order" : 2.0
+  }, {
+    "name" : "Other",
+    "uuid" : "a2639e26-ee7d-433d-9f23-91f736484983",
+    "order" : 3.0
+  } ]
+}, {
+  "name" : "Recheck for TB?",
+  "uuid" : "4bac8b64-5231-4eb1-8b4a-2b0102c05b0f",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Referred from",
+  "uuid" : "9cd8d245-37ef-409b-80c5-5df4c44cac5d",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Self",
+    "uuid" : "04255d2e-a93c-47d3-800c-0ba95e8fa93e",
+    "order" : 0.0
+  }, {
+    "name" : "Shelter",
+    "uuid" : "e1e41e39-2a2c-4552-bae4-234cf8a67af6",
+    "order" : 1.0
+  }, {
+    "name" : "Street Medicine",
+    "uuid" : "6a3c352a-a533-434c-84f0-b18513eb466d",
+    "order" : 2.0
+  }, {
+    "name" : "Other organization",
+    "uuid" : "45b31151-7f4c-4ed0-ad50-3c2dd6dde664",
+    "order" : 3.0
+  } ]
+}, {
+  "name" : "Rehistrationf form,Photograph",
+  "uuid" : "e4e87ce6-b37c-4042-9684-fba23f4fc502",
+  "dataType" : "Image",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Related to As",
+  "uuid" : "48e30850-067f-41af-a6ae-15a9850f4bfb",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Son",
+    "uuid" : "53f7751c-e11d-4aaf-ba82-d38bee964006",
+    "order" : 0.0
+  }, {
+    "name" : "Daughter",
+    "uuid" : "d9fa1428-0919-4ca3-b589-192f67832a53",
+    "order" : 1.0
+  }, {
+    "name" : "Mother",
+    "uuid" : "9e1e215e-3282-4f4e-890c-613598a8f2f1",
+    "order" : 2.0
+  }, {
+    "name" : "Father",
+    "uuid" : "60dbb998-a22e-465a-bbf5-c2e5e2764687",
+    "order" : 3.0
+  }, {
+    "name" : "Friend",
+    "uuid" : "9a89ad76-2e23-4f40-8924-1f76bb9e382b",
+    "order" : 4.0
+  }, {
+    "name" : "Other",
+    "uuid" : "a2639e26-ee7d-433d-9f23-91f736484983",
+    "order" : 5.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "Relative Name",
+  "uuid" : "8f938a80-71d8-4710-8471-b3445eed63df",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Requires screening",
+  "uuid" : "6861207c-4007-41fc-bdcd-9e73515c1504",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Result for CBNAAT",
+  "uuid" : "d6e259fe-5f21-499a-916a-f3f0e4336679",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Rifampicin Resistant",
+    "uuid" : "4463849d-51ef-47bc-835d-f8964ad0e307",
+    "order" : 0.0
+  }, {
+    "name" : "Rifampicin Sensitive",
+    "uuid" : "d2c662b6-7d1f-4d1a-8b40-3215beaf2463",
+    "order" : 1.0
+  }, {
+    "name" : "NA",
+    "uuid" : "72ffab18-4f95-4b06-89ad-df3021b86dd8",
+    "order" : 2.0
+  } ]
+}, {
+  "name" : "Result for Chest X-ray",
+  "uuid" : "8dff2487-7e48-4a65-b8b9-79f8a5d41204",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Normal",
+    "uuid" : "4429d038-124c-4a8b-a6ec-5f7269dc47f6",
+    "order" : 0.0
+  }, {
+    "name" : "Abnormal",
+    "uuid" : "7ff157a2-2010-4675-b8c8-70dc978e0ed6",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Result for Smear Microscopy",
+  "uuid" : "d91c019a-8409-494f-b31a-a05a6d2461cb",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Smear Negative",
+    "uuid" : "0781fbc7-234c-48dd-bd20-209f15b5f78e",
+    "order" : 0.0
+  }, {
+    "name" : "Scanty",
+    "uuid" : "ba1fab25-c171-4d88-90ca-aae194eb7735",
+    "order" : 1.0
+  }, {
+    "name" : "+1",
+    "uuid" : "84b51f3f-cd49-4c8a-93f0-959e3ad76121",
+    "order" : 2.0
+  }, {
+    "name" : "+2",
+    "uuid" : "2353be88-5dc8-462b-a84c-1d54e48b3205",
+    "order" : 3.0
+  }, {
+    "name" : "+3",
+    "uuid" : "8b330847-8f8c-4f9a-b99d-ddde5b303980",
+    "order" : 4.0
+  } ]
+}, {
+  "name" : "Rifampicin and isoniazid sensitive",
+  "uuid" : "f8fe2878-5297-4d1e-a055-e4f8a35a1966",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Rifampicin Resistant",
+  "uuid" : "4463849d-51ef-47bc-835d-f8964ad0e307",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Rifampicin Sensitive",
+  "uuid" : "d2c662b6-7d1f-4d1a-8b40-3215beaf2463",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Scanty",
+  "uuid" : "ba1fab25-c171-4d88-90ca-aae194eb7735",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Screening done",
+  "uuid" : "f1bc4be1-4981-4848-ae88-6c2232ad5f56",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Screening Negative",
+  "uuid" : "4ab2d5f2-dd2a-4fe8-896d-ab3a85efc8a9",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Screening not done",
+  "uuid" : "3e2c91f0-5fd2-4da0-80aa-87f57975c80b",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Screening Positive",
+  "uuid" : "a2b99955-a78b-4799-a09e-bfa00106d56a",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "screening,Cough",
+  "uuid" : "bdf6297e-0ed4-48d2-9c3c-eef331da8f51",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "screening,Fever",
+  "uuid" : "789c2ab9-d8e0-4b44-9e63-8fbdadca7b65",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Self",
+  "uuid" : "04255d2e-a93c-47d3-800c-0ba95e8fa93e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Severity",
+  "uuid" : "02225143-c0a5-4213-aa00-3363baa336a2",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Shelter",
+  "uuid" : "e1e41e39-2a2c-4552-bae4-234cf8a67af6",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Smear microscopy",
+  "uuid" : "f0d899d3-2b5d-42a0-ad84-aba45445204d",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Smear Negative",
+  "uuid" : "0781fbc7-234c-48dd-bd20-209f15b5f78e",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Son",
+  "uuid" : "53f7751c-e11d-4aaf-ba82-d38bee964006",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Status",
+  "uuid" : "af5ea52c-b85d-4169-8f20-aef5463e8b9b",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Screening not done",
+    "uuid" : "3e2c91f0-5fd2-4da0-80aa-87f57975c80b",
+    "abnormal" : true,
+    "order" : 0.0
+  }, {
+    "name" : "Screening Positive",
+    "uuid" : "a2b99955-a78b-4799-a09e-bfa00106d56a",
+    "abnormal" : true,
+    "order" : 1.0
+  }, {
+    "name" : "Screening Negative",
+    "uuid" : "4ab2d5f2-dd2a-4fe8-896d-ab3a85efc8a9",
+    "abnormal" : true,
+    "order" : 2.0
+  }, {
+    "name" : "Ongoing Treatment - IP",
+    "uuid" : "f46566e7-9140-4b07-ab85-8367d3cfdda0",
+    "abnormal" : true,
+    "order" : 3.0
+  }, {
+    "name" : "Ongoing Treatment - CP",
+    "uuid" : "c059bbcc-cf19-4ffe-b1da-82edaf8f245f",
+    "abnormal" : true,
+    "order" : 4.0
+  }, {
+    "name" : "Ongoing Treatment - IP Extended",
+    "uuid" : "263184d3-c7bb-4cd7-a57a-75a81c7f1864",
+    "abnormal" : true,
+    "order" : 5.0
+  }, {
+    "name" : "Ongoing Treatment - CP Extended",
+    "uuid" : "083fdbb5-946b-429e-a970-0765f7fba984",
+    "abnormal" : true,
+    "order" : 6.0
+  }, {
+    "name" : "Treatment completed",
+    "uuid" : "671d2615-2fd0-4de0-baff-0f43871cdb2c",
+    "abnormal" : true,
+    "order" : 7.0
+  }, {
+    "name" : "Screening done",
+    "uuid" : "f1bc4be1-4981-4848-ae88-6c2232ad5f56",
+    "abnormal" : true,
+    "order" : 8.0
+  }, {
+    "name" : "Ongoing Treatment - Drug Resistant Regimen",
+    "uuid" : "8d9dfcbf-83ab-4f93-a73f-612ad5a7876a",
+    "order" : 9.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "Street Medicine",
+  "uuid" : "6a3c352a-a533-434c-84f0-b18513eb466d",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "TB Diagnosis Date",
+  "uuid" : "c62c530d-38b8-48dd-b1b6-a336df7d178d",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "TB Status",
+  "uuid" : "265f6dc9-87bb-489b-b37d-e772eb0ee860",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Positive",
+    "uuid" : "aa035386-9c04-478a-ba65-23b1775a3e37",
+    "abnormal" : true,
+    "order" : 0.0
+  }, {
+    "name" : "Negative",
+    "uuid" : "37068b03-201b-494b-8b13-6990dc14aadf",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "TB Type",
+  "uuid" : "1bf3e598-94ca-48de-be4e-eecb32a1098c",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "CAT 1",
+    "uuid" : "13f71c9a-467e-4011-b44f-1b9bc6637874",
+    "order" : 0.0
+  }, {
+    "name" : "CAT 2",
+    "uuid" : "110f7a77-038e-4c92-8e2b-b08f91c0b4b7",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Tests performed",
+  "uuid" : "3dc3e985-1fe9-41d9-aeea-7bfa35a65969",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Smear microscopy",
+    "uuid" : "f0d899d3-2b5d-42a0-ad84-aba45445204d",
+    "order" : 0.0
+  }, {
+    "name" : "Chest X-ray",
+    "uuid" : "c71fe55f-1b3b-4d13-ba16-15b0d9c5561e",
+    "order" : 1.0
+  }, {
+    "name" : "CBNAAT",
+    "uuid" : "8b3a34d1-b324-4f0c-8b6b-21712933d575",
+    "order" : 2.0
+  }, {
+    "name" : "HIV",
+    "uuid" : "265e1a1d-65d1-48d7-918c-b30ce86ab630",
+    "order" : 3.0
+  }, {
+    "name" : "LPA",
+    "uuid" : "b7fe41c8-741e-478d-bb6d-4054ab37fa6e",
+    "order" : 4.0
+  }, {
+    "name" : "RBS",
+    "uuid" : "68250a6b-646d-4000-83d7-d29ea81a4c9c",
+    "order" : 5.0
+  } ]
+}, {
+  "name" : "Transfered to home",
+  "uuid" : "76855c2a-a882-42eb-9adc-2cca5825fc34",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Treatment completed",
+  "uuid" : "671d2615-2fd0-4de0-baff-0f43871cdb2c",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Treatment Outcome",
+  "uuid" : "1b6c1f8c-d3f7-4743-a701-35b5ddb045d9",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "In progress",
+    "uuid" : "0077b2b6-2b91-4c0a-9dda-269990d0edf6",
+    "order" : 0.0
+  }, {
+    "name" : "Leave against medical advice",
+    "uuid" : "a11e409a-2824-482b-af05-acedea25f247",
+    "order" : 1.0
+  }, {
+    "name" : "Expired",
+    "uuid" : "4b19bd9b-9c68-4ee4-90d4-0908bfa9791b",
+    "order" : 2.0
+  }, {
+    "name" : "Completed",
+    "uuid" : "500c39ce-7361-451f-9580-81b3c1565573",
+    "order" : 3.0
+  }, {
+    "name" : "Cured",
+    "uuid" : "20952d47-0758-4222-8323-1fb4d3fb7acb",
+    "order" : 4.0
+  }, {
+    "name" : "NA",
+    "uuid" : "72ffab18-4f95-4b06-89ad-df3021b86dd8",
+    "order" : 5.0
+  } ]
+}, {
+  "name" : "Treatment start date",
+  "uuid" : "774668d5-b2ab-4f3e-bf1c-f859ca306339",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Type of TB",
+  "uuid" : "27102707-1165-44ba-83d8-26f05e03f1b9",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "CAT 1",
+    "uuid" : "13f71c9a-467e-4011-b44f-1b9bc6637874",
+    "order" : 0.0
+  }, {
+    "name" : "CAT 2",
+    "uuid" : "110f7a77-038e-4c92-8e2b-b08f91c0b4b7",
+    "order" : 1.0
+  }, {
+    "name" : "Unknown",
+    "uuid" : "53b571f8-5783-43c3-a508-bfe0796a9e37",
+    "order" : 2.0
+  } ]
+}, {
+  "name" : "Unknown",
+  "uuid" : "53b571f8-5783-43c3-a508-bfe0796a9e37",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Weight",
+  "uuid" : "8e456e0d-bd2d-4821-9a71-00a6ea08a7f8",
+  "dataType" : "Numeric",
+  "lowAbsolute" : 0.0,
+  "highAbsolute" : 399.0,
+  "lowNormal" : 1.0,
+  "highNormal" : 100.0,
+  "unit" : "kg",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "When was TB diagnosed",
+  "uuid" : "40189333-58d0-4281-9eaf-adff0f836100",
+  "dataType" : "Date",
+  "active" : true
+}, {
+  "name" : "Where was treatment taken",
+  "uuid" : "bed10ff7-6f41-4cc1-a509-896f6bace612",
+  "dataType" : "Text",
+  "active" : true
+}, {
+  "name" : "Whether the person been in contact with any TB patients in recent past",
+  "uuid" : "17e63d19-0307-451d-8f3d-fd69f5e24dca",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Whether treatment taken",
+  "uuid" : "1b019c70-9e80-4e15-bea0-75385bba6027",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Yes",
+    "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+    "order" : 0.0
+  }, {
+    "name" : "No",
+    "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
+    "order" : 1.0
+  } ]
+}, {
+  "name" : "Yes",
+  "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+} ]

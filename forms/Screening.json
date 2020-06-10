@@ -1,0 +1,199 @@
+{
+  "name" : "Screening",
+  "uuid" : "a5444f0e-817b-4400-a53c-4b715835a207",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "31a97c10-9fc1-414a-973f-830ec2a0086b",
+    "name" : "Initial assessment",
+    "displayOrder" : 1.0,
+    "display" : "Initial assessment",
+    "formElements" : [ {
+      "name" : "Cough",
+      "uuid" : "349995ef-2810-415c-bae7-bfcab516ecf6",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "screening,Cough",
+        "uuid" : "bdf6297e-0ed4-48d2-9c3c-eef331da8f51"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "rule" : "",
+      "mandatory" : true
+    }, {
+      "name" : "How many weeks",
+      "uuid" : "84aa6dda-cecc-49b8-9daa-82c0b1b54dc1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Cough,How many weeks",
+        "uuid" : "7b8151d6-ec70-44e3-afd6-48f47bfa543c"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('screening,Cough').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : true
+    }, {
+      "name" : "Fever",
+      "uuid" : "ae57fbae-3079-435f-9cbc-8824cba3af28",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "screening,Fever",
+        "uuid" : "789c2ab9-d8e0-4b44-9e63-8fbdadca7b65"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "How many weeks",
+      "uuid" : "b85d8668-bcfd-413d-a38f-7158ab515dd4",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Fever,how many weeks",
+        "uuid" : "4dd3080f-6213-43bc-a107-a77dce1b3209"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('screening,Fever').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : true
+    }, {
+      "name" : "Night Sweats",
+      "uuid" : "dbb98174-d41e-455d-ac2e-c781f183ba73",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Night Sweats",
+        "uuid" : "091f9916-49aa-43a0-a92f-522b876bbd62"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Fatigue",
+      "uuid" : "159f747d-5231-4e16-aae8-f1896e7bb8b2",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Fatigue",
+        "uuid" : "398f91be-d035-46be-b31f-84091af6f58d"
+      },
+      "displayOrder" : 6.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Whether the person been in contact with any TB patients in recent past",
+      "uuid" : "db257d4f-638f-45f5-973d-7a23e385927d",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Whether the person been in contact with any TB patients in recent past",
+        "uuid" : "17e63d19-0307-451d-8f3d-fd69f5e24dca"
+      },
+      "displayOrder" : 7.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    } ]
+  }, {
+    "uuid" : "5ed9b1c6-1ed2-4216-b598-b98581c4b60b",
+    "name" : "Disease History",
+    "displayOrder" : 2.0,
+    "display" : "Disease History",
+    "formElements" : [ {
+      "name" : "Had TB earlier",
+      "uuid" : "c34f3846-8623-4264-b10e-981dd1505ac1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Had TB earlier",
+        "uuid" : "206ae0bb-89d2-4283-afa7-7004db989855"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Type of TB",
+      "uuid" : "68483aad-dbde-490c-a39e-452c844004e2",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Type of TB",
+        "uuid" : "27102707-1165-44ba-83d8-26f05e03f1b9"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('Had TB earlier').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : false
+    }, {
+      "name" : "When was it diagnosed",
+      "uuid" : "759d1942-a79c-490d-b558-8349a34a477a",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "When was TB diagnosed",
+        "uuid" : "40189333-58d0-4281-9eaf-adff0f836100"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('Had TB earlier').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : true
+    }, {
+      "name" : "Whether treatment taken",
+      "uuid" : "a5a098b9-5ca6-483d-ac40-813998e8570a",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Whether treatment taken",
+        "uuid" : "1b019c70-9e80-4e15-bea0-75385bba6027"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('Had TB earlier').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : true
+    }, {
+      "name" : "Where was treatment taken",
+      "uuid" : "1d330693-2797-4d29-9910-ecffe8aa9b42",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Where was treatment taken",
+        "uuid" : "bed10ff7-6f41-4cc1-a509-896f6bace612"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('Whether treatment taken').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : false
+    }, {
+      "name" : "For How many months did the treatment last?",
+      "uuid" : "c8ba3efb-ba6a-4f75-899d-1c47a3106881",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "For How many months did the treatment last",
+        "uuid" : "066494a6-f879-4136-b50f-f3acb0bad6e7"
+      },
+      "displayOrder" : 6.0,
+      "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  statusBuilder.show().when.valueInEncounter('Whether treatment taken').containsAnswerConceptName(\"Yes\");\n  return statusBuilder.build();\n};\n",
+      "mandatory" : true
+    }, {
+      "name" : "HIV Status",
+      "uuid" : "b1f40e92-69f4-42b2-9c41-00c3d094ccf6",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "HIV Status",
+        "uuid" : "55f751ec-4a4c-4b62-930d-5c9267f88334"
+      },
+      "displayOrder" : 7.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Severity",
+      "uuid" : "6672892d-7928-4b0c-b235-8b92ccd2dc6a",
+      "keyValues" : [ {
+        "key" : "editable",
+        "value" : false
+      } ],
+      "concept" : {
+        "name" : "Severity",
+        "uuid" : "02225143-c0a5-4213-aa00-3363baa336a2"
+      },
+      "displayOrder" : 8.0,
+      "type" : "SingleSelect",
+      "rule" : "\"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n    \nlet feverDuration = programEncounter.getObservationReadableValue(\"Fever,how many weeks\");\nlet tbHistory = programEncounter.getObservationReadableValue(\"Had TB earlier\");\n       // feverWeeks = feverDuration && feverDuration.getValue();\n        //tb = tbHistory && tbHistory.getValue();\n       \n        console.log('tb',tbHistory);\n        console.log('feverWeeks',feverDuration);\n        \n        let value = 'Normal';\n        if(feverDuration > 4 || _.isEqual(tbHistory, 'Yes'))\n        value ='High';            \n       \n        //console.log('value',value);\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, true, value);\n  };",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n     const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n     complicationsBuilder.addComplication(\"Screening done\");\n      //  .when.valueInEncounter(\"Current status\").containsAnswerConceptName('Requires screening');\n        \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    return decisions;\n};",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n \n  const referredFrom = programEncounter.programEnrolment.getObservationReadableValue('Referred from');\n  \n  if(referredFrom){\n  scheduleBuilder\n    .add({\n      name: \"Screening Sample collection- Street\",\n      encounterType: \"Sample collection\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(2, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(4, 'days').toDate()\n    }).whenItem(referredFrom == 'Street Medicine')\n    .is.truthy;\n    \n    scheduleBuilder\n    .add({\n      name: \"Screening Sample collection- Shelter\",\n      encounterType: \"Sample collection\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(1, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(2, 'days').toDate()\n    }).whenItem(referredFrom != 'Street Medicine')\n    .is.truthy;\n    \n    }\n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

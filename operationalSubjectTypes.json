@@ -1,0 +1,9 @@
+{
+  "operationalSubjectTypes" : [ {
+    "uuid" : "0ac17eae-a944-4f53-a1d2-0e421065cc50",
+    "subjectType" : {
+      "uuid" : "a13f1533-1418-48a5-8b74-d5d0b03396f5"
+    },
+    "name" : "Individual"
+  } ]
+}

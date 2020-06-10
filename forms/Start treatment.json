@@ -1,0 +1,115 @@
+{
+  "name" : "Start treatment",
+  "uuid" : "ebcb8274-46cb-42df-8e9c-e3e13413e7ab",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "a1a59f5f-5282-4f39-a90c-ca5aab6a07e2",
+    "name" : "Start treatment details",
+    "displayOrder" : 1.0,
+    "display" : "Start treatment details",
+    "formElements" : [ {
+      "name" : "Treatment start date",
+      "uuid" : "d15c014c-5523-45d7-a1cf-dddf23ddfa06",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Treatment start date",
+        "uuid" : "774668d5-b2ab-4f3e-bf1c-f859ca306339"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Current treatment phase",
+      "uuid" : "61fa462b-fa6f-48b8-b5d5-b69feb7a681e",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Current Treatment Phase",
+        "uuid" : "6aa426c4-5628-419c-9391-5c7330744ba2"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Weight",
+      "uuid" : "8d4ff329-05ab-40d0-a3ea-fe8a6e903586",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Weight",
+        "uuid" : "8e456e0d-bd2d-4821-9a71-00a6ea08a7f8"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "mandatory" : true,
+      "voided" : true
+    }, {
+      "name" : "Height",
+      "uuid" : "63bd2249-6878-4d9b-9b97-fb39baa08a75",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Height",
+        "uuid" : "cf947fdf-1ead-4a8a-a89e-7a70ae7324ae"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "mandatory" : true,
+      "voided" : true
+    }, {
+      "name" : "BMI",
+      "uuid" : "050123b1-bd83-4ac5-a3de-4617cf0c553e",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "BMI",
+        "uuid" : "a5436b5c-ed86-4e16-97be-ffcd99b4f179"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "\"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n    \nlet height = programEncounter.findObservation(\"Height\");\nlet weight = programEncounter.findObservation(\"Weight\");\n        height = height && height.getValue();\n        weight = weight && weight.getValue();\n        console.log('height',height);\n        console.log('weight',weight);\n        let value = '';\n        if (_.isFinite(weight) && _.isFinite(height)) {\n         value = ruleServiceLibraryInterfaceForSharingModules.common.calculateBMI(weight, height);\n       }\n       \n     //   console.log('value',value);\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, true, value);\n  };",
+      "mandatory" : false,
+      "voided" : true
+    } ]
+  }, {
+    "uuid" : "cf57fa11-6856-4f50-b8dc-8263b658cdcd",
+    "name" : "Anthropometry",
+    "displayOrder" : 2.0,
+    "display" : "Anthropometry",
+    "formElements" : [ {
+      "name" : "Weight",
+      "uuid" : "e94eafb3-7750-4c92-acdc-caa5f5d0cae8",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Weight",
+        "uuid" : "8e456e0d-bd2d-4821-9a71-00a6ea08a7f8"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Height",
+      "uuid" : "d74623db-c5e8-46b5-b089-9581f469b9a2",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Height",
+        "uuid" : "cf947fdf-1ead-4a8a-a89e-7a70ae7324ae"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "BMI",
+      "uuid" : "b3a400f3-dcaa-45c5-98d4-0e3f872a85c1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "BMI",
+        "uuid" : "a5436b5c-ed86-4e16-97be-ffcd99b4f179"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "\"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n    \nlet height = programEncounter.findObservation(\"Height\");\nlet weight = programEncounter.findObservation(\"Weight\");\n        height = height && height.getValue();\n        weight = weight && weight.getValue();\n        console.log('height',height);\n        console.log('weight',weight);\n        let value = '';\n        if (_.isFinite(weight) && _.isFinite(height)) {\n         value = ruleServiceLibraryInterfaceForSharingModules.common.calculateBMI(weight, height);\n       }\n       \n     //   console.log('value',value);\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, true, value);\n  };",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n   const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n     complicationsBuilder.addComplication(\"Ongoing Treatment - IP\")\n       .when.valueInEncounter(\"Current Treatment Phase\")\n     .containsAnswerConceptName('Intensive Phase');\n      \n      complicationsBuilder.addComplication(\"Ongoing Treatment - CP\")\n       .when.valueInEncounter(\"Current Treatment Phase\")\n     .containsAnswerConceptName('Continue Phase');\n      \n      complicationsBuilder.addComplication(\"Ongoing Treatment - Drug Resistant Regimen\")\n       .when.valueInEncounter(\"Current Treatment Phase\")\n     .containsAnswerConceptName('Drug Resistant Regimen');\n        \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    \n    return decisions;\n};",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n \n  //Current Treatment Phase\n    const currentTreatmentPhase = programEncounter.getObservationReadableValue('Current Treatment Phase');\n    \n    if(currentTreatmentPhase){\n    \n    //Intensive Phase\n  scheduleBuilder\n    .add({\n      name: \"Sample collection- IP Progress\",\n      encounterType: \"Sample collection\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(_.isEqual(currentTreatmentPhase,'Intensive Phase') )\n    .is.truthy;\n    \n     //Intensive Phase Periodic Check-ins\n   scheduleBuilder\n    .add({\n      name: \"IP weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(_.isEqual(currentTreatmentPhase,'Intensive Phase') )\n    .is.truthy;\n    \n // scheduleBuilder\n   // .add({\n     // name: \"Sample collection- Smear Microscopy/IP end\",\n      //encounterType: \"Sample collection\",\n      //earliestDate: imports.moment(programEncounter.encounterDateTime).add(55, 'days').toDate(),\n      //maxDate: imports.moment(programEncounter.encounterDateTime).add(60, 'days').toDate()\n    //}).whenItem(_.isEqual(currentTreatmentPhase,'Intensive Phase') )\n    //.is.truthy;\n \n    \n    //Continue Phase Start\n    // scheduleBuilder\n    //.add({\n      //name: \"CP Treatment Phase Start\",\n      //encounterType: \"Treatment Phase Start\",\n      //earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      //maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    //}).whenItem(_.isEqual(currentTreatmentPhase,'Continue Phase') )\n    //.is.truthy;\n    \n     //Intensive Phase End\n     scheduleBuilder\n    .add({\n      name: \"IP Treatment Phase End\",\n      encounterType: \"Treatment Phase End\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(_.isEqual(currentTreatmentPhase,'Continue Phase') )\n    .is.truthy;\n    \n    //Drug Resistant Regimen\n      scheduleBuilder\n    .add({\n      name: \"Drug Resistant Regimen\",\n      encounterType: \"Drug Resistant Regimen\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(_.isEqual(currentTreatmentPhase,'Drug Resistant Regimen') )\n    .is.truthy;\n    }\n   \n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

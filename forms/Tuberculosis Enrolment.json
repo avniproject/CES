@@ -1,0 +1,39 @@
+{
+  "name" : "Tuberculosis Enrolment",
+  "uuid" : "d68ba679-266f-4ad6-916e-62f2ddf40241",
+  "formType" : "ProgramEnrolment",
+  "formElementGroups" : [ {
+    "uuid" : "2426c040-5e44-4628-80b8-3e90a136d378",
+    "name" : "Details",
+    "displayOrder" : 1.0,
+    "display" : "Details",
+    "formElements" : [ {
+      "name" : "Current status",
+      "uuid" : "fe2d7151-1f82-4a92-b825-2f7566fc82b1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Current status",
+        "uuid" : "755e9397-5416-466a-a132-5c0faa42abae"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "rule" : "//SAMPLE RULE EXAMPLE\n'use strict';\n({params, imports}) => {\n  const programEnrolment = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEnrolment, formElement});\n  //read the value of form element using programEnrolment.getObservationValue(CONCEPT_NAME);\n  const formElementValue1 = \"1\";\n  const formElementValue2 = \"1\";\n  //form element will be shown only when below condition is true\n  const showCondition = formElementValue1 === formElementValue2;\n  statusBuilder.show().whenItem(showCondition).is.truthy;\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "Referred from",
+      "uuid" : "4fa8c6c2-a2e0-4563-ad0d-5937d577ed6a",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Referred from",
+        "uuid" : "9cd8d245-37ef-409b-80c5-5df4c44cac5d"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "\"use strict\";\n({params, imports}) => {\n    const programEnrolment = params.entity;\n    const decisions = params.decisions;\n   \n    //create complicationBuilder using programEnrolment and then push to enrolmentDecisions array.\n   \n    const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEnrolment: programEnrolment,\n        complicationsConcept: \"Status\"\n    });\n    \n     complicationsBuilder\n        .addComplication(\"Screening not done\")\n        .when.valueInEnrolment(\"Current status\")\n        .containsAnswerConceptName('Requires screening');\n        \n     decisions.enrolmentDecisions.push(complicationsBuilder.getComplications());\n    \n    return decisions;\n};",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEnrolment = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEnrolment\n  });\n  \nconst currentStatus = programEnrolment.getObservationReadableValue('Current status');\n\n if(currentStatus) {\n if(_.isEqual(currentStatus, \"Requires screening\"))\n   scheduleBuilder\n    .add({\n      name: \"TB Screening\",\n      encounterType: \"Screening\",\n      earliestDate: imports.moment(programEnrolment.enrolmentDateTime).toDate(),\n      maxDate: imports.moment(programEnrolment.enrolmentDateTime).toDate()\n    });\n\nif(_.isEqual(currentStatus, \"Ongoing Treatment\")){\n   scheduleBuilder\n    .add({\n      name: \"Test results of the Ongoing Treatment\",\n      encounterType: \"Test results\",\n      earliestDate: imports.moment(programEnrolment.enrolmentDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEnrolment.enrolmentDateTime).add(10, 'days').toDate()\n    });\n    \n    scheduleBuilder\n    .add({\n      name: \"Start treatment\",\n      encounterType: \"Start treatment\",\n      earliestDate: imports.moment(programEnrolment.enrolmentDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEnrolment.enrolmentDateTime).add(10, 'days').toDate()\n    });\n    }\n\n}\n           \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

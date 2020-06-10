@@ -1,0 +1,128 @@
+{
+  "name" : "Periodic check-in",
+  "uuid" : "3bdcae4b-713c-4534-a8f0-53b29ecc8615",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "e2a51040-ef7f-4f34-88d6-016a97ef08e1",
+    "name" : "Check-in details",
+    "displayOrder" : 1.0,
+    "display" : "Check-in details",
+    "formElements" : [ {
+      "name" : "Patient Status",
+      "uuid" : "da5c35d2-e0fe-4b68-8e83-692bba4cff50",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Patient Status",
+        "uuid" : "5b06e357-4423-431c-b747-5d4a20706ee7"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Weight",
+      "uuid" : "2368ee7a-9f0d-4526-9409-18b834d245a1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Weight",
+        "uuid" : "8e456e0d-bd2d-4821-9a71-00a6ea08a7f8"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "BMI",
+      "uuid" : "e8d37a53-15c1-470f-a89b-913784b381b7",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "BMI",
+        "uuid" : "a5436b5c-ed86-4e16-97be-ffcd99b4f179"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "\"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n    \nlet height = programEncounter.findLatestObservationInEntireEnrolment(\"Height\", programEncounter);\nlet weight = programEncounter.findObservation(\"Weight\");\n        height = height && height.getValue();\n        weight = weight && weight.getValue();\n        console.log('height',height);\n        console.log('weight',weight);\n        let value = '';\n        if (_.isFinite(weight) && _.isFinite(height)) {\n         value = ruleServiceLibraryInterfaceForSharingModules.common.calculateBMI(weight, height);\n       }\n       \n        console.log('value',value);\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, true, value);\n  };",
+      "mandatory" : false
+    } ]
+  }, {
+    "uuid" : "1b3c8bf3-9f80-43b6-8d5a-05dd2cd690ca",
+    "name" : "Symptoms Improvement",
+    "displayOrder" : 2.0,
+    "display" : "Symptoms Improvement",
+    "formElements" : [ {
+      "name" : "Fever",
+      "uuid" : "9946f9f7-84e1-4400-8c65-954c80abe086",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Fever",
+        "uuid" : "e3294e6b-6203-4c51-aeed-cf376a9ac99c"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
+      "name" : "Cough",
+      "uuid" : "33a78d5c-456d-4476-947c-1d4b20b46025",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Cough",
+        "uuid" : "853b60f5-336c-40ff-9cfe-29e20c81f79e"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
+      "name" : "Loss of Apetite",
+      "uuid" : "3098211f-adbe-49d6-9115-5cf77ed96d1b",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Loss of Apetite",
+        "uuid" : "fc8b5c79-11bd-4d83-82ff-3fc5bb596f69"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
+      "name" : "Breathing Difficuty",
+      "uuid" : "7c995cec-0db1-4525-a87d-bbd8205acb9c",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Breathing Difficuty",
+        "uuid" : "9aa037e0-9ea0-4dde-9893-6704acbd8066"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    } ]
+  }, {
+    "uuid" : "901ce478-027f-4d68-8ab9-75b63c06367e",
+    "name" : "Side Effects of Medicines",
+    "displayOrder" : 3.0,
+    "display" : "Side Effects of Medicines",
+    "formElements" : [ {
+      "name" : "Other Complaints",
+      "uuid" : "984e1b8d-1d24-4d67-922c-38e4b0049b74",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Other Complaints",
+        "uuid" : "6919cbdd-42b2-4e1d-aa15-f2cc9947d865"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
+      "name" : "Number of days medicine taken in past week",
+      "uuid" : "9a5d1d69-79d4-4141-9862-557e5d971c58",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Number of days medicine taken in past week",
+        "uuid" : "1bbc613d-e195-4d5c-93d0-74482b915cef"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n\n \n  //Current Treatment Phase\n    const currentTreatmentPhase = programEncounter.programEnrolment.findLatestObservationFromEncounters('Current Treatment Phase').getReadableValue();\n    const patientStatus = programEncounter.getObservationReadableValue('Patient Status');  \n    \n    console.log('currentTreatmentPhase',currentTreatmentPhase);\n    \n    \n    //Leave against medical advice || Transfered to home  || _.isEqual(patientStatus,'Died')\n  if(_.isEqual(patientStatus,'Leave against medical advice') || _.isEqual(patientStatus,'Transfered to home'))\n    scheduleBuilder\n    .add({\n      name: \"TB Treatment Outcome\",\n      encounterType: \"Treatment Outcome\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });   \n    else if(currentTreatmentPhase){    \n\n if(_.isEqual(currentTreatmentPhase,'Intensive Phase')  && !programEncounter.programEnrolment.hasEncounter('Treatment Phase Start', \"CP Treatment Phase Start\")){\n    \n     //Treatment start date\n    const treatmentStartDate = programEncounter.programEnrolment.findObservationInEntireEnrolment('Treatment start date').getValue(); \n   // console.log('treatmentStartDate',treatmentStartDate);\n    \n    let ipPeriodicCheckinDate = imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(); \n    let ipEndSampleCollectionDate = imports.moment(treatmentStartDate).add(55, 'days').toDate();\n   // console.log('ipEndSampleCollectionDate',ipEndSampleCollectionDate);\n    \n    if(imports.moment(ipPeriodicCheckinDate).isBefore(ipEndSampleCollectionDate, 'date'))\n    scheduleBuilder\n    .add({\n      name: \"IP weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(11, 'days').toDate()\n    });\n    else \n     scheduleBuilder\n    .add({\n      name: \"Sample collection- IP End\",\n      encounterType: \"Sample collection\",\n      earliestDate: ipEndSampleCollectionDate,\n      maxDate: imports.moment(ipEndSampleCollectionDate).add(5, 'days').toDate()\n    });    \n  }  else if(programEncounter.programEnrolment.hasEncounter('Treatment Phase Start', \"CP Treatment Phase Start\")){\n  \n  const cpTreatmentStartDate = programEncounter.programEnrolment.findObservationInEntireEnrolment('CP start date').getValue();\n    \n    let cpPeriodicCheckinDate = imports.moment(programEncounter.encounterDateTime).add(1, 'months').toDate(); \n    let cpEndSampleCollectionDate = imports.moment(cpTreatmentStartDate).add(110, 'days').toDate();\n    console.log('cpEndSampleCollectionDate',cpEndSampleCollectionDate);\n    \n    //Continue Phase add a check for 4 monthly checkins\n   if(imports.moment(cpPeriodicCheckinDate).isBefore(cpEndSampleCollectionDate, 'date'))\n     scheduleBuilder\n    .add({\n      name: \"CP monthly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: cpPeriodicCheckinDate,\n      maxDate: imports.moment(cpPeriodicCheckinDate).add(4, 'days').toDate()\n    });\n    else\n     scheduleBuilder\n    .add({\n      name: \"Sample collection- CP End\",\n      encounterType: \"Sample collection\",\n      earliestDate: cpEndSampleCollectionDate,\n      maxDate: imports.moment(cpEndSampleCollectionDate).add(10, 'days').toDate()\n    });\n  }\n}\n\nif(programEncounter.programEnrolment.hasEncounterOfType('Clinic Visit')){\n\n const ipExtensionDate = programEncounter.programEnrolment.findObservationInEntireEnrolment('IP Extended till date').getValue();\n  const cpExtensionDate = programEncounter.programEnrolment.findObservationInEntireEnrolment('CP Extended till date').getValue();\n  let cpPeriodicCheckinDate = imports.moment(programEncounter.encounterDateTime).add(1, 'months').toDate(); \n  let ipPeriodicCheckinDate = imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(); \n  \n  if(ipExtensionDate){\n  console.log('ipPeriodicCheckinDate',ipPeriodicCheckinDate);\n  console.log('ipExtensionDate',ipExtensionDate);\n  console.log('ip periodic is before ipExtensionDate',imports.moment(ipPeriodicCheckinDate).isBefore(ipExtensionDate, 'date'));\n  \n   if(imports.moment(ipPeriodicCheckinDate).isBefore(ipExtensionDate, 'date'))\n      scheduleBuilder\n    .add({\n      name: \"IP weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: ipPeriodicCheckinDate,\n      maxDate: imports.moment(ipPeriodicCheckinDate).add(11, 'days').toDate()\n    });\n    else\n  scheduleBuilder\n    .add({\n      name: \"IP Extension Sample collection\",\n      encounterType: \"Sample collection\",\n      earliestDate: ipExtensionDate,\n      maxDate: imports.moment(ipExtensionDate).add(4, 'days').toDate()\n    });    \n  }\n    \n  if(cpExtensionDate){\n    if(imports.moment(cpPeriodicCheckinDate).isBefore(cpExtensionDate, 'date'))\n       scheduleBuilder\n    .add({\n      name: \"CP monthly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: cpPeriodicCheckinDate,\n      maxDate: imports.moment(cpPeriodicCheckinDate).add(4, 'days').toDate()\n    }); else\n  scheduleBuilder\n    .add({\n      name: \"CP Extension Sample collection\",\n      encounterType: \"Sample collection\",\n      earliestDate: cpExtensionDate,\n      maxDate: imports.moment(cpExtensionDate).add(4, 'days').toDate()\n    });\n    \n    }\n}\n\n\n\n   \n   \n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

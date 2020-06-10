@@ -1,0 +1,56 @@
+[ {
+  "name" : "Screening",
+  "uuid" : "844be705-6058-4a10-b348-5f90357f4039",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Sample collection",
+  "uuid" : "a9d08fc5-d46d-4eaf-9efd-b1145a90d4bd",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Test results",
+  "uuid" : "988799a5-dbed-4940-985e-c1965043ecf9",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "AFB Negative Follow up",
+  "uuid" : "43bc05ae-d585-4c99-bbce-3a79c695657f",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Start treatment",
+  "uuid" : "9a2c28cd-05d7-4509-855a-bda959c8d682",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Drug Resistant Regimen",
+  "uuid" : "e56c576b-ba16-40f8-b239-315d876bf7a3",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Treatment Outcome",
+  "uuid" : "7034dc93-787c-4405-9cae-9acae5039a8f",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Clinic Visit",
+  "uuid" : "5a88f1f7-56d0-4a46-8763-4a3fdc1ab944",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Treatment Phase End",
+  "uuid" : "89d0a05d-e8f4-4afb-af7f-09668231707d",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Treatment Phase Start",
+  "uuid" : "3eada760-0359-4317-aa32-35e48148e153",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+}, {
+  "name" : "Periodic Check-ins",
+  "uuid" : "5e69ad95-86b4-42c4-903d-560fb05f191f",
+  "encounterEligibilityCheckRule" : "",
+  "active" : true
+} ]

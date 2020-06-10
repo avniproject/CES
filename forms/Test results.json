@@ -1,0 +1,177 @@
+{
+  "name" : "Test results",
+  "uuid" : "79f7aca6-77b0-4d9e-a200-426004e00fc0",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "bdab627f-72b1-4d5c-91ad-7f6ea733d47b",
+    "name" : "Test details",
+    "displayOrder" : 1.0,
+    "display" : "Test details",
+    "formElements" : [ {
+      "name" : "Tests performed",
+      "uuid" : "4408f5fc-8f68-4047-811d-f44b3d890f29",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Tests performed",
+        "uuid" : "3dc3e985-1fe9-41d9-aeea-7bfa35a65969"
+      },
+      "displayOrder" : 1.0,
+      "type" : "MultiSelect",
+      "mandatory" : true
+    } ]
+  }, {
+    "uuid" : "04c9baf6-0370-4c06-8ff3-008c8e4e3d0d",
+    "name" : "Test results",
+    "displayOrder" : 2.0,
+    "display" : "Test results",
+    "formElements" : [ {
+      "name" : "Result for Smear Microscopy",
+      "uuid" : "d7ecfa81-d465-4c18-9123-8d06a0ecd14d",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Result for Smear Microscopy",
+        "uuid" : "d91c019a-8409-494f-b31a-a05a6d2461cb"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Tests performed').containsAnswerConceptName('Smear microscopy');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "Result for Chest X-ray",
+      "uuid" : "e0a07a19-629a-4e3a-928c-853d9e7784f2",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Result for Chest X-ray",
+        "uuid" : "8dff2487-7e48-4a65-b8b9-79f8a5d41204"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Tests performed').containsAnswerConceptName('Chest X-ray');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "Result for CBNAAT",
+      "uuid" : "dd6ebdb9-7a37-4eb8-b3a6-af057fea96ee",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Result for CBNAAT",
+        "uuid" : "d6e259fe-5f21-499a-916a-f3f0e4336679"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Tests performed').containsAnswerConceptName('CBNAAT');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "LPA Result",
+      "uuid" : "0b020b0e-dd42-4bfd-83ce-63407c1afda1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "LPA Result",
+        "uuid" : "218e3b5a-c4c3-491a-bd44-40426c6d6098"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Tests performed').containsAnswerConceptName('LPA');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "Random Blood Sugar Result",
+      "uuid" : "45d674c5-58a1-4b38-acbf-81e06929a312",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Random Blood Sugar Result",
+        "uuid" : "df75c7b7-a410-4141-ae68-b532371526df"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Tests performed').containsAnswerConceptName('RBS');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "HIV Result",
+      "uuid" : "4495899f-424c-44a8-9737-93f30036d730",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "HIV Result",
+        "uuid" : "fba62403-f070-4d82-81c4-e9e2909dbd90"
+      },
+      "displayOrder" : 6.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('Tests performed').containsAnswerConceptName('HIV');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "TB Status",
+      "uuid" : "836ebf11-3b1a-4e66-84fc-272e3c26b1c8",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "TB Status",
+        "uuid" : "265f6dc9-87bb-489b-b37d-e772eb0ee860"
+      },
+      "displayOrder" : 7.0,
+      "type" : "SingleSelect",
+      "mandatory" : true,
+      "voided" : true
+    } ]
+  }, {
+    "uuid" : "e3882468-107a-4e96-964c-28c92d7cab0a",
+    "name" : "TB details",
+    "displayOrder" : 3.0,
+    "display" : "TB details",
+    "formElements" : [ {
+      "name" : "TB Status",
+      "uuid" : "5c06eab3-ef25-41d8-9844-a393477976c0",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "TB Status",
+        "uuid" : "265f6dc9-87bb-489b-b37d-e772eb0ee860"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "rule" : "//SAMPLE RULE EXAMPLE\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n// console.log('programEncounter',programEncounter);\n   let showCondition = false;\n  if(_.isEqual(programEncounter.name, 'Test results for Screening'))\n          showCondition = true;\n  statusBuilder.show().whenItem(showCondition).is.truthy;\n  \n   return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "TB Type",
+      "uuid" : "0b0e36fa-1ec4-40cf-b379-a77bf0e4b1b0",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "TB Type",
+        "uuid" : "1bf3e598-94ca-48de-be4e-eecb32a1098c"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('TB Status').containsAnswerConceptName('Positive');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "TB Diagnosis Date",
+      "uuid" : "6ea7d01c-246b-4270-b1e2-17cff5bd2af5",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "TB Diagnosis Date",
+        "uuid" : "c62c530d-38b8-48dd-b1b6-a336df7d178d"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.valueInEncounter('TB Status').containsAnswerConceptName('Positive');\n\n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    } ],
+    "rule" : ""
+  }, {
+    "uuid" : "94a20e04-5016-45a9-8745-74f3190f5f83",
+    "name" : "Investigative details/Prescriptions",
+    "displayOrder" : 4.0,
+    "display" : "Investigative details/Prescriptions",
+    "formElements" : [ {
+      "name" : "Investigative details/Prescriptions",
+      "uuid" : "2000c899-e359-4342-abc3-dcff17cc1810",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Investigative details/Prescriptions",
+        "uuid" : "dd4063c5-6e67-455f-a41d-23752f3299be"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n    const resultOfSmearMicroscopy = programEncounter.getObservationReadableValue('Result for Smear Microscopy');\n\n      if(_.isEqual(programEncounter.name, 'Test results for Screening')){\n        if(_.isEqual(resultOfSmearMicroscopy, 'Smear Negative'))\n      complicationsBuilder.addComplication(\"Screening Negative\");\n        else complicationsBuilder.addComplication(\"Screening Positive\");\n      }\n      \n      decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n      \n      \n    return decisions;\n};",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n  //.hasCompletedEncounterOfType('Start treatment')\n//  console.log('Check if start treatment?', programEncounter.programEnrolment);\n  \n const testPerformed = programEncounter.getObservationReadableValue('Tests performed'); \n const resultOfSmearMicroscopy = programEncounter.getObservationReadableValue('Result for Smear Microscopy');\n const resultOfXRay = programEncounter.getObservationReadableValue('Result for Chest X-ray'); \n const cbnaatResult = programEncounter.getObservationReadableValue('Result for CBNAAT');\n const tbStatus = programEncounter.getObservationReadableValue('TB Status');\n \n console.log('programEncounter.name',programEncounter.name);\n  //Visits for Test results for Screening Sample Collection\n  if(_.isEqual(programEncounter.name, 'Test results for Screening')){\n  \n  //if(testPerformed.length == 1) \n     scheduleBuilder\n    .add({\n      name: \"AFB Negative Followup\",\n      encounterType: \"AFB Negative Follow up\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(_.isEqual(resultOfSmearMicroscopy, 'Smear Negative')).is.truthy;\n \n \n     if(_.isEqual(tbStatus,'Positive')){  \n   \n        scheduleBuilder\n                    .add({\n                    name: \"Start treatment\",\n                    encounterType: \"Start treatment\",\n                    earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n                    maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n                    }).whenItem(!_.isEqual(resultOfSmearMicroscopy, 'Smear Negative')).is.truthy;     \n   \n         scheduleBuilder\n                    .add({\n                     name: \"Drug Resistant Regimen\",\n                     encounterType: \"Drug Resistant Regimen\",\n                     earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n                     maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n                    }).whenItem(cbnaatResult == 'Rifampicin Resistant').is.truthy;\n     \n          }\n     }\n  \n    \n         \n   // if(programEncounter.programEnrolment.hasCompletedEncounterOfType('Start treatment') === true){\n    const starTreatment = programEncounter.programEnrolment.numberOfEncountersOfType('Start treatment');\n    if(starTreatment>0){\n     //Current Treatment Phase\n     const currentTreatmentPhase = programEncounter.programEnrolment.findLatestObservationFromEncounters('Current Treatment Phase').getReadableValue();\n         \n     console.log('starTreatment',starTreatment);\n     console.log('currentTreatmentPhase',currentTreatmentPhase);\n    \n      let clinicVisitName = 'Clinic Visit';\n      if(_.isEqual(programEncounter.name, 'Test results for IP end'))\n        clinicVisitName = 'Clinic Visit for IP end';\n      else if(_.isEqual(programEncounter.name, 'Test results for CP End'))\n         clinicVisitName = 'Clinic Visit for CP end';\n      \n    \n if(currentTreatmentPhase){\n   let visitName = 'Treatment Phase End';\n if(_.isEqual(currentTreatmentPhase,'Intensive Phase'))\n   visitName = 'IP Treatment Phase End';\n else if(_.isEqual(currentTreatmentPhase,'Continue Phase'))\n   visitName = 'CP Treatment Phase End';\n   \n    // if(resultOfSmearMicroscopy || resultOfXRay ){\n  scheduleBuilder\n    .add({\n      name: visitName,\n      encounterType: \"Treatment Phase End\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(resultOfSmearMicroscopy == 'Smear Negative' || resultOfXRay == 'Normal')\n    .is.truthy;\n    \n    scheduleBuilder\n    .add({\n      name: clinicVisitName,\n      encounterType: \"Clinic Visit\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(resultOfSmearMicroscopy != 'Smear Negative' &&  !_.isEqual(programEncounter.name, 'Test results for IP Progress'))\n    .is.truthy;\n   }\n  }\n  \n  if(_.isEqual(programEncounter.name, 'Test results for AFB negative followup')){\n  \n  if(tbStatus == 'Negative')\n    scheduleBuilder\n    .add({\n      name: 'Treatment Outcome',\n      encounterType: \"Treatment Outcome\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(resultOfSmearMicroscopy == 'Smear Negative' || resultOfXRay != 'Abnormal')\n    .is.truthy;\n    else     \n        scheduleBuilder\n                    .add({\n                    name: \"Start treatment\",\n                    encounterType: \"Start treatment\",\n                    earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n                    maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n                }).whenItem(resultOfSmearMicroscopy != 'Smear Negative' || resultOfXRay != 'Normal').is.truthy; \n  }\n    \n      \n   \n \n   \n \n    \n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

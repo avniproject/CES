@@ -1,0 +1,88 @@
+{
+  "name" : "Sample collection",
+  "uuid" : "7b1a0e6f-2efe-4749-976f-f360abcbe749",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "4b9bc3da-0340-4b6c-8477-275117a8a1d7",
+    "name" : "Sample Collection Details",
+    "displayOrder" : 1.0,
+    "display" : "Sample Collection Details",
+    "formElements" : [ {
+      "name" : "Date of sample collected",
+      "uuid" : "0343881f-c27f-43a7-9a39-f55d41b6d685",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Date of sample collected",
+        "uuid" : "f483a2e0-5629-4f20-ae43-6c29585a8a4c"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "rule" : "\"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n            \nreturn new imports.rulesConfig.FormElementStatus(formElement.uuid, false, '');\n  };",
+      "mandatory" : false
+    }, {
+      "name" : "Collect samples for TB diagnosis",
+      "uuid" : "e2964c78-6607-4355-accc-fa61a340debd",
+      "keyValues" : [ {
+        "key" : "ExcludedAnswers",
+        "value" : [ "Counselling point" ]
+      } ],
+      "concept" : {
+        "name" : "Collect samples for TB diagnosis",
+        "uuid" : "8f4c04d3-d411-478d-a74d-704f2c7be62c"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n  \nlet visiblity = false;\nif(_.isEqual(programEncounter.name, 'Screening Sample collection- Street') || \n  _.isEqual(programEncounter.name, 'Screening Sample collection- Shelter')) \nvisiblity = true;\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, visiblity);\n  };",
+      "mandatory" : false
+    }, {
+      "name" : "Collect samples to check for CBNAAT, LPA , Random Blood Sugar and HIV",
+      "uuid" : "296255f5-45e5-4369-99ae-048fc1daa0e9",
+      "keyValues" : [ {
+        "key" : "ExcludedAnswers",
+        "value" : [ "Counselling point" ]
+      } ],
+      "concept" : {
+        "name" : "Collect samples to check for CBNAAT, LPA , Random Blood Sugar and HIV",
+        "uuid" : "5edc435a-23d4-4f89-8ce4-8a3ec24c7aa9"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n  \nlet visiblity = false;\nif(_.isEqual(programEncounter.name, 'Sample collection- IP Progress') ) \nvisiblity = true;\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, visiblity);\n  };",
+      "mandatory" : false
+    }, {
+      "name" : "Collect Sample for Smear Microscopy",
+      "uuid" : "64232829-3ca1-492f-9197-33aed90cda36",
+      "keyValues" : [ {
+        "key" : "ExcludedAnswers",
+        "value" : [ "Counselling point" ]
+      } ],
+      "concept" : {
+        "name" : "Collect Sample for Smear Microscopy",
+        "uuid" : "34c84a38-f400-4982-95d6-da096267a83f"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n  \nlet visiblity = false;\nif(_.isEqual(programEncounter.name, 'Sample collection- IP End')) \nvisiblity = true;\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, visiblity);\n  };",
+      "mandatory" : false
+    }, {
+      "name" : "Collect Sample for to check Treatment Success",
+      "uuid" : "6c4f6d2c-0065-459a-bade-97e1f64ff226",
+      "keyValues" : [ {
+        "key" : "ExcludedAnswers",
+        "value" : [ "Counselling point" ]
+      } ],
+      "concept" : {
+        "name" : "Collect Sample for to check Treatment Success",
+        "uuid" : "e0dcfd16-b6ef-46ce-9a81-918005c86635"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n  \nlet visiblity = false;\nif(_.isEqual(programEncounter.name, 'Sample collection- CP End')) \nvisiblity = true;\n        \n    return new imports.rulesConfig.FormElementStatus(formElement.uuid, visiblity);\n  };",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n  \n  let visitName = \"Test results\";\n  if(_.isEqual(programEncounter.name, 'Screening Sample collection- Street') || \n  _.isEqual(programEncounter.name, 'Screening Sample collection- Shelter')) \n  visitName = \"Test results for Screening\";//Test results for Screening Sample Collection\n  else if (_.isEqual(programEncounter.name, 'Sample collection- IP Progress'))\n   visitName = \"Test results for IP Progress\";\n  else if (_.isEqual(programEncounter.name, 'Sample collection- IP End'))\n   visitName = \"Test results for IP end\";\n  else if (_.isEqual(programEncounter.name, 'Sample collection- CP End'))\n   visitName = \"Test results for CP End\";\n  else if(_.isEqual(programEncounter.name, 'Sample collection - AFB negative followup'))\n   visitName = \"Test results for AFB negative followup\";\n   \n   //CP Extension Sample collection\n   //IP Extension Sample collection\n   \n  scheduleBuilder\n    .add({\n      name: visitName,\n      encounterType: \"Test results\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });\n    \n      \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

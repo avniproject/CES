@@ -1,0 +1,71 @@
+{
+  "name" : "AFB Negative Followup",
+  "uuid" : "5cfe4d98-b053-4a6f-9343-91bbcf14b441",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "627d84cf-0e78-47e3-9800-17fd68961df6",
+    "name" : "Current Symptoms",
+    "displayOrder" : 1.0,
+    "display" : "Current Symptoms",
+    "formElements" : [ {
+      "name" : "Cough",
+      "uuid" : "e31ffe8f-c8fb-4370-b990-9a3e1b654ef6",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Cough",
+        "uuid" : "853b60f5-336c-40ff-9cfe-29e20c81f79e"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Fever",
+      "uuid" : "c0dd1112-1211-4284-b15e-2c83642e8aa6",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Fever",
+        "uuid" : "e3294e6b-6203-4c51-aeed-cf376a9ac99c"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Night Sweats",
+      "uuid" : "ce8243b9-6df9-4682-a244-81784e57dbe0",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "How are night sweats",
+        "uuid" : "805e3fe3-807e-47dd-a1b8-e9005c664ce5"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Fatigue",
+      "uuid" : "1df96123-a035-4457-8ebb-390706eca6b1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "How is fatigue",
+        "uuid" : "6171b6ba-d269-4d78-8980-c28d9772d27f"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Is recheck for TB required?",
+      "uuid" : "2b7a005e-1519-497d-87a3-ed862b4e64d1",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Recheck for TB?",
+        "uuid" : "4bac8b64-5231-4eb1-8b4a-2b0102c05b0f"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n \n  const isRecheckRequired = programEncounter.getObservationReadableValue('Recheck for TB?');\n  console.log('isRecheckRequired',isRecheckRequired);\n  if(isRecheckRequired){\n  scheduleBuilder\n    .add({\n      name: \"Sample collection - AFB negative followup\",\n      encounterType: \"Sample collection\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(isRecheckRequired == 'Yes')\n    .is.truthy;\n    \n    scheduleBuilder\n    .add({\n      name: \"Treatment Outcome\",\n      encounterType: \"Treatment Outcome\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    }).whenItem(isRecheckRequired == 'No')\n    .is.truthy;\n    }\n    \n\n    \n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

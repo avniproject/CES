@@ -1,0 +1,76 @@
+{
+  "name" : "Treatment Phase End",
+  "uuid" : "33fa0f1a-b199-4faa-9ad1-b05f5db6228c",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "06350e82-89b7-47d6-bffe-af9e1aa235ea",
+    "name" : "Treatment Phase End",
+    "displayOrder" : 1.0,
+    "display" : "Treatment Phase End",
+    "formElements" : [ {
+      "name" : "End of Treatment Phase",
+      "uuid" : "af49ac96-39a5-442c-aecf-d1e956551e56",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "End of Treatment Phase",
+        "uuid" : "474101e9-fa4f-4018-b207-0071d44d568a"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true,
+      "voided" : true
+    }, {
+      "name" : "IP End Date",
+      "uuid" : "14bae8d0-546f-4eb0-9f50-67d538454728",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "IP End Date",
+        "uuid" : "5c56f140-f0a6-4566-9d2e-eca620c06f15"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "//SAMPLE RULE EXAMPLE\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  //read the value of form element using programEncounter.getObservationValue(CONCEPT_NAME);\n  const encounterName = programEncounter.name;\n  \n  //form element will be shown only when below condition is true\n  const showCondition = _.isEqual(encounterName,'IP Treatment Phase End');\n  statusBuilder.show().whenItem(showCondition).is.truthy;\n  \n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "IP Status",
+      "uuid" : "f183ae2e-90bc-4b82-9f82-5c6cdf7ab912",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "IP Status",
+        "uuid" : "e6df909e-e95b-4622-887e-c242f8a77423"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "//SAMPLE RULE EXAMPLE\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  //read the value of form element using programEncounter.getObservationValue(CONCEPT_NAME);\n  const encounterName = programEncounter.name;\n  \n  //form element will be shown only when below condition is true\n  const showCondition = _.isEqual(encounterName,'IP Treatment Phase End');\n  statusBuilder.show().whenItem(showCondition).is.truthy;\n  \n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "CP End Date",
+      "uuid" : "79b34f85-396e-49b7-ac05-0bfe0922ae75",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "CP End Date",
+        "uuid" : "e226539d-5798-48e0-9e9f-2922bb0fb033"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "//SAMPLE RULE EXAMPLE\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  //read the value of form element using programEncounter.getObservationValue(CONCEPT_NAME);\n  const encounterName = programEncounter.name;\n  \n  //form element will be shown only when below condition is true\n  const showCondition = _.isEqual(encounterName,'CP Treatment Phase End');\n  statusBuilder.show().whenItem(showCondition).is.truthy;\n  \n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    }, {
+      "name" : "CP Status",
+      "uuid" : "fbf9656d-825d-4cca-990c-e84da5772a00",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "CP Status",
+        "uuid" : "6a75bccd-a711-49d3-9e19-248bb7f46875"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "//SAMPLE RULE EXAMPLE\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  //read the value of form element using programEncounter.getObservationValue(CONCEPT_NAME);\n  const encounterName = programEncounter.name;\n  \n  //form element will be shown only when below condition is true\n  const showCondition = _.isEqual(encounterName,'CP Treatment Phase End');\n  statusBuilder.show().whenItem(showCondition).is.truthy;\n  \n  return statusBuilder.build();\n};",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n \n     //END Treatment Phase\n  //  const endTreatmentPhase = programEncounter.getObservationReadableValue('End of Treatment Phase');\n   const encounterName = programEncounter.name;\n  \n   if(_.isEqual(encounterName,'IP Treatment Phase End')){\n  if(!programEncounter.programEnrolment.hasEncounter('Treatment Phase Start', \"CP Treatment Phase Start\"))  \n     scheduleBuilder\n    .add({\n      name: \"CP Treatment Phase Start\",\n      encounterType: \"Treatment Phase Start\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });\n    }\n    \n   else if(_.isEqual(encounterName,'CP Treatment Phase End')){\n    scheduleBuilder\n    .add({\n      name: \"TB Treatment Outcome\",\n      encounterType: \"Treatment Outcome\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });\n    }  \n    \n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

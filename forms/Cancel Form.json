@@ -1,0 +1,39 @@
+{
+  "name" : "Cancel Form",
+  "uuid" : "f418a839-98e5-4d3b-ab81-8840683a9c9e",
+  "formType" : "ProgramEncounterCancellation",
+  "formElementGroups" : [ {
+    "uuid" : "db53cb76-2948-42a7-8ce2-c57836662c66",
+    "name" : "Visit Cancel Details",
+    "displayOrder" : 1.0,
+    "display" : "Visit Cancel Details",
+    "formElements" : [ {
+      "name" : "Reason of Cancel",
+      "uuid" : "a381b26e-5b0b-45b3-b810-7a478434f5e9",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Reason of Cancel",
+        "uuid" : "c0bd3256-b865-499e-8fe3-f383b3730dd9"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Specify, other reason for cancel",
+      "uuid" : "6a4648fb-b5f8-444e-b446-3ab7751a83b0",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Other reason for cancel",
+        "uuid" : "f8a9abe3-1a79-4e0e-a055-9df07c126972"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "\"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const formElement = params.formElement;\n    \nconst cancelReasonObs = programEncounter.findCancelEncounterObservation('Reason of Cancel');\nconst answer = _.isNil(cancelReasonObs) ? undefined : cancelReasonObs.getReadableValue();  \n\n// cancelReasonObs && cancelReasonObs.getReadableValue(); \nconsole.log('cancelReasonObs',cancelReasonObs);\nconsole.log('answer',answer);\nlet isVisible = false;\nif (answer == 'Other') \n  isVisible = true;\n \n        \n      return new imports.rulesConfig.FormElementStatus(formElement.uuid, isVisible);\n  };",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

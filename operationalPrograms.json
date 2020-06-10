@@ -1,0 +1,10 @@
+{
+  "operationalPrograms" : [ {
+    "uuid" : "86f9166c-2c64-4583-90c5-fb56dbba161f",
+    "program" : {
+      "uuid" : "67bfb2fd-d0a4-4c2c-8478-a346709dd447"
+    },
+    "name" : "Tuberculosis",
+    "programSubjectLabel" : "Tuberculosis"
+  } ]
+}

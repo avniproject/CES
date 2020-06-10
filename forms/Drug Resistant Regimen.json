@@ -1,0 +1,38 @@
+{
+  "name" : "Drug Resistant Regimen",
+  "uuid" : "b47a513d-bf11-44f7-855a-63407079ce1e",
+  "formType" : "ProgramEncounter",
+  "formElementGroups" : [ {
+    "uuid" : "5c611c8c-5312-457a-93c4-b566630372f3",
+    "name" : "Drug Resistant Treatment",
+    "displayOrder" : 1.0,
+    "display" : "Drug Resistant Treatment",
+    "formElements" : [ {
+      "name" : "Drug Resistant Type",
+      "uuid" : "fce8c8ef-f82d-4461-90bb-95bb4d50553f",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Drug Resistant Type",
+        "uuid" : "071165dc-7e2a-4c45-b784-fa47b1d92cd4"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Diagnosis Date for Drug Resistance",
+      "uuid" : "3bf14538-230e-4b65-82df-1553d22a084d",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Diagnosis Date for Drug Resistance",
+        "uuid" : "7413ffa1-cf95-40f5-a27c-11411eb873b5"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "//SAMPLE RULE EXAMPLE\n\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n  \n  scheduleBuilder\n    .add({\n      name: \"Drug resistant weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });\n  \n  //add new visit schedule object to scheduleBuilder\n  return scheduleBuilder.getAll();\n};",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}

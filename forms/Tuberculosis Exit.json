@@ -1,0 +1,75 @@
+{
+  "name" : "Tuberculosis Exit",
+  "uuid" : "ea1aa1a7-2f81-4d08-b8c0-5c4878b1bcd8",
+  "formType" : "ProgramExit",
+  "formElementGroups" : [ {
+    "uuid" : "c80778a6-3d0e-4e22-b137-36caef88fd6e",
+    "name" : "Program Exit Details",
+    "displayOrder" : 1.0,
+    "display" : "Program Exit Details",
+    "formElements" : [ {
+      "name" : "Reason of Exit",
+      "uuid" : "d55814ab-d164-464b-b139-025af849abe3",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Reason of Exit",
+        "uuid" : "72a46df9-132c-4713-b5f6-dad0dc37c964"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : true
+    }, {
+      "name" : "Date of Death",
+      "uuid" : "0434faa7-ba68-49cc-b606-b9d48ac750b4",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Date of Death",
+        "uuid" : "e96c2cd4-4074-459d-b838-0f77e59e5366"
+      },
+      "displayOrder" : 2.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const formElement = params.formElement;\n  const exitReason = programExit.findExitObservation('Reason of Exit');\n  const readableValue = _.isNil(exitReason) ? undefined : exitReason.getReadableValue();\n  return new imports.rulesConfig.FormElementStatus(formElement.uuid, readableValue === 'Death', null);;\n};",
+      "mandatory" : false
+    }, {
+      "name" : "Cause of Death",
+      "uuid" : "203050c7-e983-4bd3-a3c7-37bfa9b22c83",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Cause of Death",
+        "uuid" : "a01bd572-5f56-41a7-bbd8-e806a0f791c4"
+      },
+      "displayOrder" : 3.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const formElement = params.formElement;\n  const exitReason = programExit.findExitObservation('Reason of Exit');\n  const readableValue = _.isNil(exitReason) ? undefined : exitReason.getReadableValue();\n  return new imports.rulesConfig.FormElementStatus(formElement.uuid, readableValue === 'Death', null);;\n};",
+      "mandatory" : false
+    }, {
+      "name" : "Place of Death",
+      "uuid" : "803e34bd-9e90-44d7-92f7-155e51b7d3f0",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Place of Death",
+        "uuid" : "08fc23ac-1de5-424e-9175-a030cff2fb17"
+      },
+      "displayOrder" : 4.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const formElement = params.formElement;\n  const exitReason = programExit.findExitObservation('Reason of Exit');\n  const readableValue = _.isNil(exitReason) ? undefined : exitReason.getReadableValue();\n  return new imports.rulesConfig.FormElementStatus(formElement.uuid, readableValue === 'Death', null);;\n};",
+      "mandatory" : false
+    }, {
+      "name" : "Specify, other reason for exit",
+      "uuid" : "ca794ac9-03df-49da-970c-025021278171",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Other reason for exit",
+        "uuid" : "9e3412c4-3b00-4060-ae76-40e8b1af97f2"
+      },
+      "displayOrder" : 5.0,
+      "type" : "SingleSelect",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const formElement = params.formElement;\n  const exitReason = programExit.findExitObservation('Reason of Exit');\n  const readableValue = _.isNil(exitReason) ? undefined : exitReason.getReadableValue();\n  return new imports.rulesConfig.FormElementStatus(formElement.uuid, readableValue === 'Other', null);;\n};",
+      "mandatory" : false
+    } ]
+  } ],
+  "decisionRule" : "",
+  "visitScheduleRule" : "",
+  "validationRule" : "",
+  "checklistsRule" : ""
+}
