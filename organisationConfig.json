@@ -2,7 +2,16 @@
   "uuid" : "394085f7-fa55-488a-8cc3-175ecb654ac9",
   "settings" : {
     "languages" : [ "en", "hi_IN" ],
-    "searchFilters" : [ ],
+    "searchFilters" : [ {
+      "type" : "Name",
+      "widget" : "Default",
+      "titleKey" : "Relative",
+      "subjectTypeUUID" : "a13f1533-1418-48a5-8b74-d5d0b03396f5"
+    }, {
+      "type" : "Name",
+      "titleKey" : "Individual",
+      "subjectTypeUUID" : "a13f1533-1418-48a5-8b74-d5d0b03396f5"
+    } ],
     "myDashboardFilters" : [ ]
   },
   "worklistUpdationRule" : ""

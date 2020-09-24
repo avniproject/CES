@@ -20,7 +20,7 @@
       "mandatory" : true
     } ]
   } ],
-  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n   const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n     complicationsBuilder.addComplication(\"Treatment completed\");\n         \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    \n    return decisions;\n};",
+  "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n   const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n    const patientStatus = programEncounter.programEnrolment.findLatestObservationFromEncounters('Patient Status').getReadableValue();\n    \n    if(patientStatus != 'Transfered to home' || patientStatus != 'Leave against medical advice')\n     complicationsBuilder.addComplication(\"Treatment completed\");\n         \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    \n    return decisions;\n};",
   "visitScheduleRule" : "",
   "validationRule" : "",
   "checklistsRule" : ""

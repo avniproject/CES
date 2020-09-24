@@ -34,6 +34,6 @@
   } ],
   "decisionRule" : "",
   "visitScheduleRule" : "",
-  "validationRule" : "",
+  "validationRule" : "'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const validationResults = [];\n\n  //const hasExitedProgram = (programEncounter) => programEncounter.programEnrolment.programExitDateTime;\n  console.log('hasExitedProgram',programEncounter.programEnrolment.programExitDateTime);  \n\n  //if(!hasExitedProgram(programEncounter) ) {\n    //validationResults.push(imports.common.createValidationError(\"Cannot cancel a visit until you exit the program!\"));\n  //}\n  \n  return validationResults;\n};",
   "checklistsRule" : ""
 }

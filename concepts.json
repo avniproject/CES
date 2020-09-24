@@ -74,6 +74,22 @@
   } ],
   "keyValues" : [ ]
 }, {
+  "name" : "Brother",
+  "uuid" : "40b67aa0-1c20-417a-ba01-1f216505ccb7",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Can't cancel a visit until you exit the program!",
+  "uuid" : "447a8198-2237-497e-851d-86beb6dcba39",
+  "dataType" : "NA",
+  "active" : true,
+  "keyValues" : [ ]
+}, {
+  "name" : "Can't say",
+  "uuid" : "434b5d2d-7558-4d40-987f-f0a6fa1d4173",
+  "dataType" : "NA",
+  "active" : true
+}, {
   "name" : "CAT 1",
   "uuid" : "13f71c9a-467e-4011-b44f-1b9bc6637874",
   "dataType" : "NA",
@@ -115,7 +131,7 @@
     "order" : 1.0
   } ]
 }, {
-  "name" : "Collect Sample for Smear Microscopy",
+  "name" : "Collect Sample for Smear Microscopy and other tests to check if IP has been successful",
   "uuid" : "34c84a38-f400-4982-95d6-da096267a83f",
   "dataType" : "Coded",
   "active" : true,
@@ -125,7 +141,7 @@
     "order" : 0.0
   } ]
 }, {
-  "name" : "Collect Sample for to check Treatment Success",
+  "name" : "Collect sample to test whether treatment has been successful.",
   "uuid" : "e0dcfd16-b6ef-46ce-9a81-918005c86635",
   "dataType" : "Coded",
   "active" : true,
@@ -135,8 +151,8 @@
     "order" : 0.0
   } ]
 }, {
-  "name" : "Collect samples for TB diagnosis",
-  "uuid" : "8f4c04d3-d411-478d-a74d-704f2c7be62c",
+  "name" : "Collect samples for re-diagnosis",
+  "uuid" : "b41dba60-6313-4580-9b25-a0b2ff3a1296",
   "dataType" : "Coded",
   "active" : true,
   "answers" : [ {
@@ -145,8 +161,18 @@
     "order" : 0.0
   } ]
 }, {
-  "name" : "Collect samples to check for CBNAAT, LPA , Random Blood Sugar and HIV",
+  "name" : "Collect samples to check for CBNAAT, LPA , Random Blood Sugar and HIV  (Do not collect if any of these are already done)",
   "uuid" : "5edc435a-23d4-4f89-8ce4-8a3ec24c7aa9",
+  "dataType" : "Coded",
+  "active" : true,
+  "answers" : [ {
+    "name" : "Counselling point",
+    "uuid" : "2409577d-6bd6-4f70-a63c-9c1efa6162b9",
+    "order" : 0.0
+  } ]
+}, {
+  "name" : "Collect Samples to diagnose if the patient has TB. Collect Samples for HIV if required.",
+  "uuid" : "8f4c04d3-d411-478d-a74d-704f2c7be62c",
   "dataType" : "Coded",
   "active" : true,
   "answers" : [ {
@@ -365,6 +391,10 @@
     "name" : "Multidrug Resistant",
     "uuid" : "25763efb-88c0-44d0-8d08-b73a1f8eb902",
     "order" : 1.0
+  }, {
+    "name" : "Isoniazid Resistant",
+    "uuid" : "bc6d7440-3c9c-49eb-8ef0-3cc32382fa12",
+    "order" : 2.0
   } ]
 }, {
   "name" : "End IP/Start CP",
@@ -396,6 +426,11 @@
   "dataType" : "NA",
   "active" : true,
   "keyValues" : [ ]
+}, {
+  "name" : "Father's/Mother's name",
+  "uuid" : "2e264bb7-63e0-43df-802b-c5141040c0c6",
+  "dataType" : "Text",
+  "active" : true
 }, {
   "name" : "Fatigue",
   "uuid" : "398f91be-d035-46be-b31f-84091af6f58d",
@@ -570,6 +605,11 @@
     "uuid" : "34ac6b86-6b9b-4086-99b9-ac2c5fc82fa3",
     "order" : 3.0
   } ]
+}, {
+  "name" : "Husband",
+  "uuid" : "61baea24-9867-4b4a-a5f2-7cde76877588",
+  "dataType" : "NA",
+  "active" : true
 }, {
   "name" : "In progress",
   "uuid" : "0077b2b6-2b91-4c0a-9dda-269990d0edf6",
@@ -746,7 +786,8 @@
   }, {
     "name" : "End IP/Start CP",
     "uuid" : "0ba65e13-cd23-4db9-818f-400b6b8745c2",
-    "order" : 4.0
+    "order" : 4.0,
+    "voided" : true
   } ]
 }, {
   "name" : "Next Visit/Sample Collection Date",
@@ -785,7 +826,7 @@
   "dataType" : "NA",
   "active" : true
 }, {
-  "name" : "Number of days medicine taken in past week",
+  "name" : "Number of days medicine taken since last visit",
   "uuid" : "1bbc613d-e195-4d5c-93d0-74482b915cef",
   "dataType" : "Numeric",
   "unit" : "days",
@@ -1012,6 +1053,11 @@
     "order" : 1.0
   } ]
 }, {
+  "name" : "Referred by organisation",
+  "uuid" : "b9cfed44-be5d-45b8-985b-3c9ad764954a",
+  "dataType" : "Text",
+  "active" : true
+}, {
   "name" : "Referred from",
   "uuid" : "9cd8d245-37ef-409b-80c5-5df4c44cac5d",
   "dataType" : "Coded",
@@ -1068,6 +1114,46 @@
     "name" : "Other",
     "uuid" : "a2639e26-ee7d-433d-9f23-91f736484983",
     "order" : 5.0
+  } ],
+  "keyValues" : [ ]
+}, {
+  "name" : "Relation (voided~14433)",
+  "uuid" : "daef733f-af38-40ed-bf97-0c5e1ee36d2a",
+  "dataType" : "Coded",
+  "active" : true,
+  "voided" : true,
+  "answers" : [ {
+    "name" : "Father",
+    "uuid" : "60dbb998-a22e-465a-bbf5-c2e5e2764687",
+    "order" : 0.0
+  }, {
+    "name" : "Son",
+    "uuid" : "53f7751c-e11d-4aaf-ba82-d38bee964006",
+    "order" : 1.0
+  }, {
+    "name" : "Mother",
+    "uuid" : "9e1e215e-3282-4f4e-890c-613598a8f2f1",
+    "order" : 2.0
+  }, {
+    "name" : "Daughter",
+    "uuid" : "d9fa1428-0919-4ca3-b589-192f67832a53",
+    "order" : 3.0
+  }, {
+    "name" : "Wife",
+    "uuid" : "3b272b54-437e-49fc-a749-cc1630707761",
+    "order" : 4.0
+  }, {
+    "name" : "Husband",
+    "uuid" : "61baea24-9867-4b4a-a5f2-7cde76877588",
+    "order" : 5.0
+  }, {
+    "name" : "Brother",
+    "uuid" : "40b67aa0-1c20-417a-ba01-1f216505ccb7",
+    "order" : 6.0
+  }, {
+    "name" : "Sister",
+    "uuid" : "79eb91de-09cb-492d-a741-de10ca21759e",
+    "order" : 7.0
   } ],
   "keyValues" : [ ]
 }, {
@@ -1220,6 +1306,11 @@
 }, {
   "name" : "Shelter",
   "uuid" : "e1e41e39-2a2c-4552-bae4-234cf8a67af6",
+  "dataType" : "NA",
+  "active" : true
+}, {
+  "name" : "Sister",
+  "uuid" : "79eb91de-09cb-492d-a741-de10ca21759e",
   "dataType" : "NA",
   "active" : true
 }, {
@@ -1467,6 +1558,10 @@
     "name" : "No",
     "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
     "order" : 1.0
+  }, {
+    "name" : "Can't say",
+    "uuid" : "434b5d2d-7558-4d40-987f-f0a6fa1d4173",
+    "order" : 2.0
   } ]
 }, {
   "name" : "Whether treatment taken",
@@ -1482,6 +1577,11 @@
     "uuid" : "23e0c6b0-3224-4b98-8cd2-b01a6b6c9a31",
     "order" : 1.0
   } ]
+}, {
+  "name" : "Wife",
+  "uuid" : "3b272b54-437e-49fc-a749-cc1630707761",
+  "dataType" : "NA",
+  "active" : true
 }, {
   "name" : "Yes",
   "uuid" : "bc91bda8-5a6b-4da4-ae47-388118606c25",

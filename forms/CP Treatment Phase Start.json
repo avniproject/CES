@@ -42,7 +42,7 @@
       },
       "displayOrder" : 3.0,
       "type" : "SingleSelect",
-      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n\nstatusBuilder.show().when.latestValueInPreviousEncounters('Current Treatment Phase').containsAnswerConceptName('Continue Phase');\n\n  return statusBuilder.build();\n};",
+      "rule" : "'use strict';\n({params, imports}) => {\nconst programEncounter = params.entity;\nconst formElement = params.formElement;\n\nconst statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\nstatusBuilder.show();\n//statusBuilder.show().when.latestValueInPreviousEncounters('Current Treatment //Phase').containsAnswerConceptName('Continue Phase');\n\n  return statusBuilder.build();\n};",
       "mandatory" : true
     }, {
       "name" : "Drug Resistant Regiment Start date",
@@ -60,7 +60,7 @@
     } ]
   } ],
   "decisionRule" : "//SAMPLE RULE EXAMPLE\n  \"use strict\";\n({params, imports}) => {\n    const programEncounter = params.entity;\n    const decisions = params.decisions;\n    //create complicationBuilder using programEncounter and then push to encounterDecisions array.\n    \n   const complicationsBuilder = new imports.rulesConfig.complicationsBuilder({\n        programEncounter: programEncounter,\n        complicationsConcept: \"Status\"\n    });\n    \n     complicationsBuilder.addComplication(\"Ongoing Treatment - CP\");\n         \n     decisions.encounterDecisions.push(complicationsBuilder.getComplications());\n    \n    \n    \n    return decisions;\n};",
-  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({programEncounter});\n \n let nextPeriodicVisitDate = imports.moment(programEncounter.encounterDateTime).add(1, 'months').toDate(); \n   scheduleBuilder\n    .add({\n      name: \"CP monthly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: nextPeriodicVisitDate,\n      maxDate: imports.moment(nextPeriodicVisitDate).add(4, 'days').toDate()\n    }); \n    \n  return scheduleBuilder.getAll();\n};",
+  "visitScheduleRule" : "\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({programEncounter});\n \n let nextPeriodicVisitDate = imports.moment(programEncounter.encounterDateTime).add(1, 'months').toDate(); \n   scheduleBuilder\n    .add({\n      name: \"CP monthly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: nextPeriodicVisitDate,\n      maxDate: imports.moment(nextPeriodicVisitDate).add(1, 'days').toDate()\n    }); \n    \n  return scheduleBuilder.getAll();\n};",
   "validationRule" : "",
   "checklistsRule" : ""
 }

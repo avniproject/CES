@@ -8,6 +8,17 @@
     "displayOrder" : 1.0,
     "display" : "Details",
     "formElements" : [ {
+      "name" : "Father's/Mother's name",
+      "uuid" : "650f288a-00da-4013-b543-336b4c545789",
+      "keyValues" : [ ],
+      "concept" : {
+        "name" : "Father's/Mother's name",
+        "uuid" : "2e264bb7-63e0-43df-802b-c5141040c0c6"
+      },
+      "displayOrder" : 1.0,
+      "type" : "SingleSelect",
+      "mandatory" : false
+    }, {
       "name" : "Associated Patient's name",
       "uuid" : "2d8ce739-a414-4f97-b306-3d322c8ea2d8",
       "keyValues" : [ ],
@@ -15,7 +26,7 @@
         "name" : "Associated Patient's name",
         "uuid" : "9c8e0a00-902f-4871-ae34-bed6ff40e659"
       },
-      "displayOrder" : 1.0,
+      "displayOrder" : 2.0,
       "type" : "SingleSelect",
       "mandatory" : false
     }, {
@@ -26,9 +37,10 @@
         "name" : "Relative Name",
         "uuid" : "8f938a80-71d8-4710-8471-b3445eed63df"
       },
-      "displayOrder" : 2.0,
+      "displayOrder" : 3.0,
       "type" : "SingleSelect",
-      "mandatory" : false
+      "mandatory" : false,
+      "voided" : true
     }, {
       "name" : "Related to As",
       "uuid" : "f7606298-75f1-40c9-955c-c898dddd104a",
@@ -37,9 +49,9 @@
         "name" : "Related to As",
         "uuid" : "48e30850-067f-41af-a6ae-15a9850f4bfb"
       },
-      "displayOrder" : 3.0,
+      "displayOrder" : 4.0,
       "type" : "SingleSelect",
-      "rule" : "'use strict';\n({params, imports}) => {\n  const individual = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({individual, formElement});\n  statusBuilder.show().valueInRegistration('Relative Name').is.defined;\n  return statusBuilder.build();\n};",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const individual = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new imports.rulesConfig.FormElementStatusBuilder({individual, formElement});\n  statusBuilder.show().when.valueInRegistration(\"Relative Name\").is.defined;\n  return statusBuilder.build();\n};",
       "mandatory" : false
     }, {
       "name" : "Origin State",
@@ -49,7 +61,7 @@
         "name" : "Origin State",
         "uuid" : "e8ced17b-1bf9-418b-be6a-5b5afa24f3c3"
       },
-      "displayOrder" : 4.0,
+      "displayOrder" : 5.0,
       "type" : "SingleSelect",
       "mandatory" : true
     }, {
@@ -60,7 +72,7 @@
         "name" : "District",
         "uuid" : "f9431241-9210-426c-a3ed-b05b1c6ef90b"
       },
-      "displayOrder" : 5.0,
+      "displayOrder" : 6.0,
       "type" : "SingleSelect",
       "mandatory" : true
     }, {
@@ -71,7 +83,7 @@
         "name" : "Rehistrationf form,Photograph",
         "uuid" : "e4e87ce6-b37c-4042-9684-fba23f4fc502"
       },
-      "displayOrder" : 6.0,
+      "displayOrder" : 7.0,
       "type" : "SingleSelect",
       "mandatory" : false
     } ]

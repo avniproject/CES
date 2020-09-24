@@ -28,7 +28,7 @@
       },
       "displayOrder" : 2.0,
       "type" : "SingleSelect",
-      "rule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const formElement = params.formElement;\n  const exitReason = programExit.findExitObservation('Reason of Exit');\n  const readableValue = _.isNil(exitReason) ? undefined : exitReason.getReadableValue();\n  return new imports.rulesConfig.FormElementStatus(formElement.uuid, readableValue === 'Death', null);;\n};",
+      "rule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const formElement = params.formElement;\n  \n  const exitReason = programExit.findExitObservation('Reason of Exit');\n  \n  console.log('programExit',programExit.enrolmentDateTime);\n  const readableValue = _.isNil(exitReason) ? undefined : exitReason.getReadableValue();\n  return new imports.rulesConfig.FormElementStatus(formElement.uuid, readableValue === 'Death', null);\n};",
       "mandatory" : false
     }, {
       "name" : "Cause of Death",
@@ -70,6 +70,6 @@
   } ],
   "decisionRule" : "",
   "visitScheduleRule" : "",
-  "validationRule" : "",
+  "validationRule" : "'use strict';\n({params, imports}) => {\n  const programExit = params.entity;\n  const validationResults = [];\n    \n  const deathDate = programExit.findExitObservation('Date of Death').getReadableValue();\n  const enrolmentDate = programExit.program.enrolment_date_time;\n  console.log('deathDate',deathDate);\n  console.log('enrolmentDate',enrolmentDate);\n  console.log('programExit',programExit);\n \n \n if(imports.moment(deathDate).isBefore(enrolmentDate, 'date')){\n validationResults.push(imports.common.createValidationError('Date of death cannot be before date of enrolment'));\n }\n  \n  return validationResults;\n};",
   "checklistsRule" : ""
 }

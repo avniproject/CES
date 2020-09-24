@@ -28,11 +28,12 @@
       },
       "displayOrder" : 2.0,
       "type" : "SingleSelect",
+      "rule" : "\n'use strict';\n({params, imports}) => {\n  const programEncounter = params.entity;\n  const formElement = params.formElement;\n  const statusBuilder = new\n  imports.rulesConfig.FormElementStatusBuilder({programEncounter, formElement});\n  \nconst tbDiagnosisDate = programEncounter.programEnrolment.findObservationInEntireEnrolment('When was TB diagnosed') || programEncounter.programEnrolment.findObservationInEntireEnrolment('TB Diagnosis Date');\n \n \n let treatmentStartDate = programEncounter.getObservationReadableValue('Diagnosis Date for Drug Resistance');\n \n if(imports.moment(tbDiagnosisDate.getValue()).isAfter(treatmentStartDate, 'date'))\n statusBuilder.validationError(\"Diagnosis Date for Drug reistance cannot be before the TB Diagnosis date\");\n \n  return statusBuilder.build();\n};",
       "mandatory" : true
     } ]
   } ],
   "decisionRule" : "",
-  "visitScheduleRule" : "//SAMPLE RULE EXAMPLE\n\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n  \n  scheduleBuilder\n    .add({\n      name: \"Drug resistant weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(10, 'days').toDate()\n    });\n  \n  //add new visit schedule object to scheduleBuilder\n  return scheduleBuilder.getAll();\n};",
+  "visitScheduleRule" : "//SAMPLE RULE EXAMPLE\n\"use strict\";\n({ params, imports }) => {\n  const programEncounter = params.entity;\n  const scheduleBuilder = new imports.rulesConfig.VisitScheduleBuilder({\n    programEncounter\n  });\n  \n  scheduleBuilder\n    .add({\n      name: \"Drug resistant weekly Check-in\",\n      encounterType: \"Periodic Check-ins\",\n      earliestDate: imports.moment(programEncounter.encounterDateTime).add(7, 'days').toDate(),\n      maxDate: imports.moment(programEncounter.encounterDateTime).add(8, 'days').toDate()\n    });\n  \n  //add new visit schedule object to scheduleBuilder\n  return scheduleBuilder.getAll();\n};",
   "validationRule" : "",
   "checklistsRule" : ""
 }

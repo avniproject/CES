@@ -3,7 +3,7 @@
   "uuid" : "a13f1533-1418-48a5-8b74-d5d0b03396f5",
   "active" : true,
   "type" : "Person",
-  "group" : false,
   "household" : false,
+  "group" : false,
   "voided" : false
 } ]
